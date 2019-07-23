@@ -1,0 +1,194 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="{%static '/favicon.ico' %}" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>订单确认</title>
+
+    	<link rel="stylesheet" type="text/css" href="https://m.wukonglicai.com/css/global.css" />
+	<link rel="stylesheet" type="text/css" href="https://m.wukonglicai.com/css/set-account.css" />
+	<script type="text/javascript" src="https://m.wukonglicai.com/javascript/deposit/upgrade.js"></script>
+	<script type="text/javascript" src="https://m.wukonglicai.com/javascript/growingSDK.js"></script>
+	<script type="text/javascript" src="https://m.wukonglicai.com/javascript/rem.js"></script>
+	<script type="text/javascript" src="https://m.wukonglicai.com/javascript/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="https://m.wukonglicai.com/javascript/deposit/alertMessage.js"></script>
+	<script type="text/javascript" src="https://m.wukonglicai.com/javascript/deposit/layer/layer.js"></script>
+	<link rel="stylesheet" href="https://m.wukonglicai.com/css/zhezhao.css?20181013">
+	<link rel="stylesheet" href="https://m.wukonglicai.com/css/base.css" />
+
+
+
+
+	<link rel="stylesheet" type="text/css" href="https://m.wukonglicai.com/extra/integral/css/nav.css?t=20181030" />
+</head>
+<style>
+				.toast{
+					position:fixed;
+					padding:.2rem .3rem;
+					background-color:rgba(0,0,0,.7);
+					top:50%;left:50%;
+					transform:translate(-50%,-50%);
+					color:#fff;
+					border-radius:.08rem
+				}
+				.serve-tel {
+					padding: 0 .3rem;
+					color: #888;
+					margin-top: .3rem;
+					font-size: .24rem;
+					line-height.38rem;
+				}
+				.serve-tel a {
+					color: #1CC7B9;
+				}
+				.m-withdraw button[type='submit'] {
+				    width: 6.7rem;
+				    height: 0.98rem;
+				    background: #fff;
+				    font-size: 0.34rem;
+				    color: #ff5c6c;
+				    border: #ddd solid 1px;
+				    -moz-border-radius: 0.04rem;
+				    -webkit-border-radius: 0.04rem;
+				    border-radius: 0.04rem;
+				}
+			</style>
+<body>
+
+<div id="wrap">
+					
+					<div id="container">
+					<div class="m-setact-content">
+					<div class="m-act-name">
+					<div class="m-main">
+					<a href="https://m.wukonglicai.com/weixin/jf/integral.html">
+					<dl>
+					<dt><img src="https://m.wukonglicai.com/img/user-tx.png" alt=""></dt>
+					<dd>
+					<p class="n-username">订单明细<small>(注意核对信息）</small></p>
+					<!-- 
+						<p class="n-vip-level"><span>Lv0普通会员</span></p>
+					-->
+					</dd>
+					</dl>
+					</a>
+					</div>
+					<!-- 
+						<span class="n-right-jt"><em><img src="https://m.wukonglicai.com/img/ico-right-sj.svg" alt=""></em></span>
+					-->
+					</div>
+					<!-- 
+					<ul class="m-act-info">
+						<li onclick="verifyIdCard()">
+						<span class="n-dt">身份认证</span>
+						<span class="n-dd"><em class="n-fh">点我认证</em> <em class="n-r-jt"><img src="https://m.wukonglicai.com/img/ico-right-sj.svg" alt=""></em></span>
+						</li>
+					</ul>
+					<style>
+										.m-act-info li a{
+										display:flex;
+										width:100%;
+										height:1.04rem;
+									    display: -webkit-flex;
+									    align-items: center;
+					   					-webkit-align-items: center;
+										}
+										</style>
+					-->
+					<form  action="/programDetails/{{programDetail.id}}/buyProgramDetails/" method="post">
+						{% csrf_token %}
+					<ul class="m-act-info">
+						<!-- 
+							{'programDetail':programDetail,'personalInfo':personalInfo}
+						-->
+						<li>
+							<span class="n-dt">用户名</span><span class="n-dd" name='name' >{{ personalInfo.name }}</span>
+						</li>
+
+						<li>
+							<span class="n-dt">当前账户余额</span><span class="n-dd" name='money'>{{ personalInfo.money }}  </span>
+						</li>
+
+						
+
+						<li>
+							<span class="n-dt">项目名称</span><span class="n-dd" name='program_name'>{{ programDetail.name }}  </span>
+						</li>
+						<li>
+							<span class="n-dt">最小买入值</span><span class="n-dd" name='program_minPay'>{{ programDetail.minPay }} </span>
+						</li>
+						<li>
+							<span class="n-dt">利率</span><span class="n-dd" name='program_payBack'>{{ programDetail.payBack }}  </span>
+						</li>
+						
+						<li>
+							<span class="n-dt">产品周期（天）</span><span class="n-dd" name='program_payBack'>{{ programDetail.payDay }} </span>
+						</li>
+
+						<li>
+							<span class="n-dt">利息账户</span><span class="n-dd" name='pay_name'>{{ personalInfo.pay_name }} </span>
+						</li>
+						<li style="background-color: #ff5c6c">
+							<span class="n-dt" style="color: #000" >输入购买数量</span>
+							<textarea class="n-dd" style="font-size: 0.3rem" name='program_count'>1</textarea>
+						</li>
+					
+						<!-- 
+						<li>
+						<a href="https://m.wukonglicai.com/weixin/user/ristResult.html">
+						<span class="n-dt">出借风格</span>
+						<span class="n-dd">
+						<em class="n-fh">(去测评)</em>
+						<em class="n-r-jt"><img src="https://m.wukonglicai.com/img/ico-right-sj.svg" alt=""></em>
+						</span>
+						</a>
+						</li>
+						-->
+					</ul>
+
+					
+					<!-- 
+					<ul class="m-act-info">
+					<li>
+					<a href="https://m.wukonglicai.com/act/bfe/wk-app/app-page/index.html#/accountSecurity">
+					<span class="n-dt">账户安全</span>
+					<span class="n-dd"><em class="n-r-jt"><img src="https://m.wukonglicai.com/img/ico-right-sj.svg" alt=""></em></span>
+					</a>
+					</li>
+					</ul>
+
+
+					<ul class="m-act-info">
+					<li onclick="jump('2')">
+					<span class="n-dt">存管账户管理</span>
+					<span class="n-dd">
+					<i style="font-family: PingFangSC-Regular; color: #1CC7B9; font-style: normal">去开通<em class="n-r-jt"><img src="https://m.wukonglicai.com/img/ico-right-sj.svg" alt=""></em></i>
+					</span>
+					</li>
+					</ul>
+					-->
+
+
+					<p class="serve-tel">如遇到相关操作问题，可联系QQ客服<a href="tel:88888">88888，</a>由客服协助您</p>
+					<div class="m-withdraw">
+						
+						<button type='submit' class="btn btn-primary pull-right">确认无误并购入</button>
+					<!--
+					<button type="button" onclick="messageTip1()">保存并退出</button>
+					 -->
+					</div>
+					
+					</form>
+					</div>
+					</div>
+					<footer class="foot-cyp" accountopeningstatus="F">
+					<p>如果有账户信息问题，可以在个人中心->账户设置中修改</p>
+					</footer>
+					</div>
+
+
+</body>
+</html>

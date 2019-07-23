@@ -1,0 +1,327 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en" style="font-size: 50px;">
+<head>
+    <link rel="shortcut icon" href="{%static '/favicon.ico' %}" /><meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>季账户-3个月</title>
+<script type="text/javascript" src="https://m.wukonglicai.com/javascript/rem.js"></script>
+<link rel="stylesheet" href="https://m.wukonglicai.com/css/global.css" />
+<link rel="stylesheet" href="https://m.wukonglicai.com/css/swiper.min.css" />
+<link rel="stylesheet" href="https://m.wukonglicai.com/css/new-detail.css?20180921" />
+<link rel="stylesheet" href="https://m.wukonglicai.com/css/zhezhao.css?20181013"/>
+<link rel="stylesheet" href="https://m.wukonglicai.com/css/privacy-play-style.css">
+<script type="text/javascript" src="https://m.wukonglicai.com/javascript/jquery.min.js"></script>
+<script type="text/javascript" src="https://m.wukonglicai.com/javascript/swiper-3.3.1.jquery.min.js"></script>
+<script type="text/javascript" src="https://m.wukonglicai.com/javascript/orderRenewal/alertMessage.js"></script>
+<script type="text/javascript" src="https://m.wukonglicai.com/javascript/deposit/upgrade.js"></script>
+<script src="https://m.wukonglicai.com//javascript/base.js"></script>
+<script type="text/javascript" src="https://m.wukonglicai.com/javascript/growingSDK.js"></script>
+<script type="text/javascript" src="https://m.wukonglicai.com/javascript/public.js"></script>
+<script type="text/javascript" src="https://m.wukonglicai.com/javascript/deposit/privacy.js"></script>
+<script type="text/javascript">
+        growing("9fwkw9I74stZ6ASPI7GNTri9jw==");
+	</script>
+<style>
+		.toast{
+			position:fixed;
+			padding:.2rem .3rem;
+			background-color:rgba(0,0,0,.7);
+			top:50%;left:50%;
+			transform:translate(-50%,-50%);
+			color:#fff;
+			border-radius:.08rem
+		}
+		.vipLevel {
+			text-align: center;
+			background-color: #fff;
+			position: relative;
+		}
+		.vipLevel p {
+			text-align: center;
+			font-size: .22rem;
+		}
+		.wrap_content1{
+			margin-top: 0;
+		}
+		.vipLevel {
+			font-size: .22rem;
+			line-height: .3rem;
+			padding-top: .1rem;
+		}
+		.vipLevel p {
+			display: inline-block;
+			background-color: #FF5C6C;
+			padding: .03rem;
+			border-radius: .22rem;
+			-webkit-border-radius: .22rem;
+			-o-border-radius: .22rem;
+			-ms-border-radius: .22rem;
+			position: relative;
+		}
+		.vipLevel p em{
+			position: absolute;
+			left: 0;
+			top: 0;
+			margin-top: .03rem;
+			margin-left: .03rem;
+			display: inline-block;
+			width: .3rem;
+			height: .3rem;
+			background: #fff url(https://m.wukonglicai.com/img/icon-level.png) center center no-repeat;
+			background-size: .3rem .3rem;
+			-webkit-background-size: .3rem .3rem;
+			border-radius: 50%;
+			-webkit-border-radius: 50%;
+			-o-border-radius: 50%;
+			-ms-border-radius: 50%;
+		}
+		.vipLevel p span {
+			color: #fff;
+			padding: 0 .36rem 0 .66rem;
+			line-height: .3rem;
+			height: .3rem;
+		}
+		.vipLevel div {
+			padding: 0 0 .36rem;
+			position: relative;
+		}
+		.vipLevel div span{
+			display: inline-block;
+			color: #FF5C6C;
+			padding-top: .2rem;
+		}
+		.vipLevel div var{
+			display: inline-block;
+			color: #888;
+			text-decoration: underline;
+			font-style: normal;
+			padding-top: .2rem;
+		}
+		.vipLevel div em {
+			/*position: absolute;*/
+			/*right: .37rem;*/
+			/*bottom: .36rem;*/
+			/*width: .28rem;*/
+			/*height: .28rem;*/
+			/*line-height: .28rem;*/
+			/*text-align: center;*/
+			/*color: #ccc;*/
+			/*font-size: .28rem;*/
+			/*border: 1px solid #ccc;*/
+			/*border-radius: 50%;*/
+			/*-webkit-border-radius: 50%;*/
+			/*-o-border-radius: 50%;*/
+			/*-ms-border-radius: 50%;*/
+			/*transform: rotate(11deg);*/
+			/*-webkit-transform: rotate(11deg);*/
+			position: absolute;
+			right: .37rem;
+			bottom: .36rem;
+			width: .3rem;
+			height: .3rem;
+			background: url(https://m.wukonglicai.com/img/vip-i.png) center center no-repeat;
+			background-size: 100% 100%;
+			-webkit-background-size: 100% 100%;
+
+		}
+		.bto5 {
+			margin: 0 auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.bto5 > span {
+			width: 2.27rem;
+			height: .8rem;
+			border-radius: .07rem;
+			box-shadow: 0 .1rem 0 0 #108ba9;
+		}
+		
+		/* 进入页面时显示的跳转普惠loading */
+		.puhui-loading {
+			display: none;
+		}
+		.puhui-mask {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 10;
+			background-color: #000;
+			opacity: 0.7;
+		}
+		.loading-box-puhui {
+			position: fixed;
+			left: 50%;
+			top: 50%;
+			z-index: 12;
+			width: 85%;
+			transform: translate(-50%, -50%);
+			-webkit-transform: translate(-50%, -50%);
+			-moz-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+			background-color: #fff;
+			border-radius: .2rem;
+			-webkit-border-radius: .2rem;
+			-moz-border-radius: .2rem;
+			-ms-border-radius: .2rem;
+			padding: .6rem .4rem .69rem .4rem;
+		}
+		.loading-message-puhui {
+			color: #333;
+			font-size: .32rem;
+			text-align: center;
+			align-items: center;
+			margin-bottom: .5rem;
+			line-height: .45rem;
+		}
+		.loading-logo-puhui {
+			display: -webkit-box;
+			display: -moz-box;
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: flex;
+			
+			-webkit-justify-content:center;
+			justify-content:center;
+			-moz-box-pack:center;
+			-webkit--moz-box-pack:center;
+			box-pack:center;
+			align-items:center;
+			-webkit-align-items:center;
+			box-align:center;
+			-moz-box-align:center;
+			-webkit-box-align:center;
+		}
+		.logo-ph {
+			width: auto;
+			height:.42rem;
+		}
+		.jump {
+			width: auto;
+			height: .1rem;
+			padding: 0 .61rem;
+		}
+		.logo-hx {
+			width: auto;
+			height: .39rem;
+		}
+		
+	</style>
+</head>
+<body>
+
+
+<div id="wrap">
+
+<form action="/weixin/user/buy/shiftBank.html" method="post" id="subForm">
+<input type="hidden" id="ptype" name="ptype" value="Q3">
+<input type="hidden" id="productPackageCode" name="productPackageCode" value="190117150904512-800">
+<input type="hidden" id="pcode" name="pcode" value="Q3-190117150904512">
+</form>
+<div id="container">
+<div class="m-dtl-ovw">
+<!-- 
+	<p class="odr-num">第XXXX期</p>
+-->
+<div class="n-main">
+<div class="n-lilv">
+<div><span>一天</span></div>
+<div><span>{{ programDetail.payBack }}<em>%</em></span></div>
+</div>
+<p class="n-mag">期望年化回报率<em><img onclick="showExplain(1)" style="width: .3rem;margin-left: 0.1rem" src="https://m.wukonglicai.com/images/exclamation_mark2.png"></em></p>
+</div>
+<ul class="m-oth">
+</ul>
+</div>
+<div class="m-dtl-sec dtl-msg">
+<ul>
+	<li>
+		<span class="n-left">项目名称：</span><span class="n-right">{{ programDetail.name }}  </span>
+	</li>
+
+	
+	<li><span class="n-left">封闭期限：</span><span class="n-right">{{ programDetail.payDay }}  天
+		<img name="showExplainImg" onclick="showExplain(2)" style="width: 0.3rem; margin-left: 0.1rem;" src="https://m.wukonglicai.com/images/exclamation_mark2.png"></span>
+	</li>
+	<li>
+		<span class="n-left">出借额度：</span><span class="n-right">最低出借{{ programDetail.minPay }} 元起</span>
+	</li>
+	<li>
+		<span class="n-left">购买数量：</span><textarea class="n-right">1</textarea>  
+	</li>
+
+</ul>
+
+<div class="m-mark-bzjh">
+<div class="n-top"><img src="https://m.wukonglicai.com/img/img-bz.jpg" alt=""></div>
+<div class="n-text">
+<h2>履约保证保险</h2>
+<p>太平洋财险承保履约保证保险，担保公司保障计划专款范围内承担保险担保责任。</p>
+</div>
+<div class="n-text">
+<h2>账户资金安全险</h2>
+<p>玖富已与太平洋财险展开合作，为出借出借客户提供“账户资金安全险”。一旦出现账户被盗用等损失，太平洋财险将按约定进行赔偿。</p>
+</div>
+<div class="n-btn-close"><span>我知道了</span></div>
+</div>
+</div>
+<div class="m-dtl-sec m-tzx">
+<ul>
+<li>
+<span class="n-jrtz">出借成功，且债权撮合完成<br>开始计算期望回报（预估1~2个小时）</span>
+<span class="n-zrxt">封闭期结束债权转让<br>撮合匹配债权最长合同期限为48个月<img name="showExplainImg" onclick="showExplain(9)" style="width: 0.3rem; margin-left: 0.1rem;" src="https://m.wukonglicai.com/images/exclamation_mark2.png"></span>
+</li>
+</ul>
+<div class="line" style="position: relative; top: -0.4rem;"></div>
+<p class="tips" style="margin-top: -0.4rem;">
+	 {{ programDetail.programText }} 
+</p>
+</div>
+
+</div>
+<div class="m-dtl-btn-box">
+ 
+<a href="buyProgramDetails" class="n-btn-tz">
+<p><big>马上购买</big></p>
+</a>
+
+
+
+</div>
+
+
+<footer class="foot-cyp">
+<div style="width:4.8rem; margin:.24rem auto 0;"><img src="https://m.wukonglicai.com/images/9fHuiPu-bottom.png" alt=""></div>
+</footer>
+<div class="cal-tor-box">
+<div class="m-cal-main">
+<div class="m-cal-list">
+<div class="n-top">
+<p class="n-mag">期望回报<img name="showExplainImg" onclick="showExplain(3)" style="width: 0.3rem; margin-left: 0.1rem;" src="https://m.wukonglicai.com/images/exclamation_mark2.png"></p>
+<p class="n-total"><big id="shouyi">147.95</big><small>元</small></p>
+</div>
+<div class="m-compute">
+<ul class="n-ipt">
+<li><label>出借金额</label><input type="text" id="input_sal" value="10000" class="mony-num" onblur="isNumber(this)"><span>元</span></li>
+<li><label>出借天数</label><input type="text" id="input_days" value="90" class="mony-num" onblur="isNumber(this)" disabled="disabled"><span>天</span></li>
+<li><p>期望年化回报率<img name="showExplainImg" onclick="showExplain(1)" style="width: 0.3rem; margin-left: 0.1rem;" src="https://m.wukonglicai.com/images/exclamation_mark2.png">：<span id="baseYield">6.0</span><span>% </span></p></li>
+</ul>
+
+</div>
+</div>
+</div>
+<button class="n-btn-close"><img src="https://m.wukonglicai.com/img/ico-close-b.png" alt=""></button>
+</div>
+</div>
+
+
+</body>
+<!-- 
+{"code":"000000","message":"成功","data":{"privacy":{"state":"F","title":"隐私保护提示","version":"v2"}}}
+-->
+
+</html>

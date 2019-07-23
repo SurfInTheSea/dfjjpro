@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+
+{% block title %}
+大发基金 | 登录页面
+{% endblock %}
+
+
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/login/style.login.css' %}">
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class=" text-center">
+  <div class="col-12 col-sm-8 main-section">
+    <div clas="modal-content">
+      <div class="col-12 user-img">
+        <img src="{% static 'images/login/face.png' %}">
+      </div>
+
+
+
+
+      <form class="col-12" action="/login/" method="post" >
+
+          {% if message %}
+                  <div class="alert alert-warning">{{ message }}</div>
+              {% endif %}
+              
+              {% csrf_token %}
+
+
+        <div class="form-group group-icon-1">
+          {{ login_form.username}}
+          <!-- <input type="text" class="form-control" id="userName" maxlength="128" placeholder="输入账户" required="" readonly="true"> -->
+        </div>
+        <div class="form-group group-icon-2">
+          {{ login_form.password }}
+          <!-- <input type="password" class="form-control" id="passWord" maxlength="20" placeholder="输入密码" required="" readonly="true"> -->
+        </div>
+        <div class="form-group group-captcha">
+                  {{ login_form.captcha }}
+                  {{ login_form.captcha.errors }}
+                  
+                  
+        </div>
+        <button type="submit" class="btn"><i class="fas fa-sign-in-alt"></i>登录</button>
+      </form>
+
+
+
+
+      <div class="col-12 forget">
+        <a href="#">忘记密码？| 点击处理</a>
+      </div>
+    </div><!-- End of Modal Content -->
+  </div>
+
+</div>
+
+{% endblock %}
+
+
+
+{% block js %}
+
+{% endblock %}

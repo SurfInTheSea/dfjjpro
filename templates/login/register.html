@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+
+{% block title %}
+大发基金 | 登录页面
+{% endblock %}
+
+
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/login/style.login.css' %}">
+{% endblock %}
+
+
+
+{% block content %}
+
+              <!-- 
+              <div style="width:100%;height:7%;background-color:#dc3b40;color:white;text-align:center;">
+                <div style="width:100%;height:20%"></div>
+                <h3 style="height:100%；line-height:300px;margin-top:0;">用户注册</h3>
+            </div>
+            <div style="width:100%;height:3%;"></div>
+              -->
+
+   <div class=" text-center">
+  <div class="col-12 col-sm-8 main-section">
+    <div clas="modal-content">
+      <div class="col-12 ">
+        <h1>大发基金</h1>
+      </div>
+          <form class='form-register' action="/register/" method="post">
+ 
+              {% if message %}
+                  <div class="alert alert-warning">{{ message }}</div>
+              {% endif %}
+ 
+              {% csrf_token %}
+ 
+
+              <div class="form-group group-icon-1">
+                  {{ register_form.username}}
+              </div>
+              <div class="form-group group-icon-2">
+                  {{ register_form.password1 }}
+              </div>
+              <div class="form-group group-icon-2">
+                  {{ register_form.password2 }}
+              </div>
+
+              <div class="form-group">
+                  {{ register_form.captcha.errors }}
+                  {{ register_form.captcha }}
+
+              </div>
+ 
+              <!--
+                <button type="reset" class="btn btn-default pull-left">重置</button>
+                <button type="submit" class="btn btn-primary pull-right">提交</button>
+              -->
+              <button type="submit" class="btn btn-primary btn-lg col-8">提交</button>
+ 
+          </form>
+        </div>
+        </div>
+    </div> <!-- /container -->
+
+{% endblock %}
+
+
+
+{% block js %}
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+

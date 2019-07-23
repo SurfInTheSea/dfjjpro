@@ -1,0 +1,316 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" href="{%static '/favicon.ico' %}" />
+	<meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+	<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+	<title>新人福利</title>
+	<meta name=keywords content=悟空理财,玖富时代,玖富金融,玖富微金融,玖富理财,玖富官网,久富时代,久富金融,久富微金融,久富理财,久富官网>
+	<meta name=description content=悟空理财,玖富9Fbank.com--中国领先个人微金融服务平台！微理财，微信贷，云银行，专注小微信贷与个人金融服务！>
+	<meta name=format-detection content="telephone=no">
+	
+   
+    <style type="text/css">
+    	html {
+		    font-family: microsoft yahei,helvetica,verdana,san-serif;
+		    line-height: 1.5;
+		    -ms-text-size-adjust: 100%;
+		    -webkit-text-size-adjust: 100%;
+		    -webkit-tap-highlight-color: rgba(0,0,0,0);
+		    background-color: #600eae;
+		    font-size: 50px;
+		}
+    	body {
+		    min-height: 100%;
+		    padding: 0;
+		    margin: 0;
+		    font-size: .24rem;
+		    outline: 0;
+		    color: #000;
+		}
+		a, button, dd, div, dl, dt, fieldset, figure, form, h1, h2, h3, h4, h5, h6, img, input, li, menu, ol, p, textarea, ul {
+		    padding: 0;
+		    margin: 0;
+		    border: 0;
+		}
+		p {
+		    display: block;
+		    margin-block-start: 1em;
+		    margin-block-end: 1em;
+		    margin-inline-start: 0px;
+		    margin-inline-end: 0px;
+		}
+		img, video {
+		    vertical-align: middle;
+		    border: 0;
+		    border-style: none;
+		}
+    	.wrap{
+			width: 100%;
+		    height: auto;
+		}
+		.header-wrap{
+			
+		}
+		.novice-gift{
+			width: 6.7rem;
+		    margin: 0 auto;
+		    margin-top: -1.5rem;
+		    position: relative;
+		}
+		.about-box{
+			background: #fff9e4;
+		    padding: 0 .4rem;
+		    padding-top: .5rem;
+		}
+		.action{
+			text-align: center;
+		    width: 100%;
+		    color: #c0c1d0;
+		    font-size: .22rem;
+		    padding: .36rem 0;
+		}
+		.explain_layer {
+		    position: fixed;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		    z-index: 1000;
+		    background-color: rgba(0,0,0,.7);
+		}
+		.explain_layer .layer_body{
+		    position: relative;
+		    height: auto;
+		    width: 5.74rem;
+		    background: #fff;
+		    margin: 3rem auto 0;
+		    -webkit-border-radius: .2rem;
+		    border-radius: .2rem;
+		    padding: .5rem .3rem;
+		    text-align: justify;
+		    font-size: .24rem;
+		    color: #888;
+		    line-height: 1.7;
+		}
+		.explain_layer .close_btn{
+		    height: .66rem;
+		    width: .66rem;
+		    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEIAAABCCAYAAAGUUzB+AAAAAXNSR…2bx2C98tenlQ/A9ikA1eoTgd+pfwN/DX8Ff85r/+uUK6V/Aeehw124LJ0UAAAAAElFTkSuQmCC) no-repeat;
+		    -webkit-background-size: cover;
+		    background-size: cover;
+		    display: block;
+		    margin: .6rem auto 0;
+		}
+		.header-bg{
+		    width: 100%;
+		    height: 6.52rem;
+		    background: url(../static/images/index/newguideImages/header-banner.5ac0508.png) no-repeat;
+		    -webkit-background-size: 100% 100%;
+		    background-size: 100% 100%;
+		    position: relative;
+		}
+		.header-bg .rules-activity{
+		    clear: both;
+		    height: .44rem;
+		    width: 1.4rem;
+		    margin: 0 auto;
+		    -webkit-border-radius: .2rem;
+		    border-radius: .2rem;
+		    background: #8c12cc;
+		    text-align: center;
+		    line-height: .44rem;
+		    font-size: .21rem;
+		    color: #f4d9ca;
+		    position: absolute;
+		    top: 2.78rem;
+		    left: 50%;
+		    margin-left: -.7rem;
+		}
+		
+		
+		.novice-gift .novice-gift-one:first-child {
+		    background: url(../static/images/index/newguideImages/pic1.72656da.png);
+		    -webkit-background-size: 100% 100%;
+		    background-size: 100% 100%;
+		    -webkit-border-radius: .4rem;
+		    border-radius: .4rem;
+		}
+		.novice-gift .novice-gift-one:nth-child(2) {
+		    background: url(../static/images/index/newguideImages/pic2.0b8eb4a.png);
+		    -webkit-background-size: 100% 100%;
+		    background-size: 100% 100%;
+		    -webkit-border-radius: .4rem;
+		    border-radius: .4rem;
+		}
+		.novice-gift .novice-gift-one:nth-child(3) {
+		    background: url(../static/images/index/newguideImages/pic3.ccb73d9.png);
+		    -webkit-background-size: 100% 100%;
+		    background-size: 100% 100%;
+		    -webkit-border-radius: .4rem;
+		    border-radius: .4rem;
+		}
+		.novice-gift-one{
+		    width: 100%;
+		    height: 4.77rem;
+		    margin-bottom: .5rem;
+		}
+
+		.novice-gift-one .novice-gift-one-info {
+		    padding: .95rem 0 0 .57rem;
+		}
+		
+		.novice-gift-one .novice-gift-one-btn {
+		    width: 4.8rem;
+		    height: 1.12rem;
+		    margin: 0 auto;
+		    margin-top: .3rem;
+		    margin-right: auto;
+		    margin-bottom: 0px;
+		    margin-left: auto;
+		    margin-top: .3rem;
+		}
+		.novice-gift-one .novice-gift-one-btn img {
+		    width: 100%;
+		    height: 100%;
+		}
+		.novice-gift-five, .novice-gift-four{
+		    width: 100%;
+		    height: 4.77rem;
+		    background: url(../static/images/index/newguideImages/pic4.d645e9c.png);
+		    -webkit-border-radius: .4rem;
+		    border-radius: .4rem;
+		    -webkit-background-size: 100% 100%;
+		    background-size: 100% 100%;
+		    margin-bottom: .5rem;
+		}
+		.novice-gift-five, .novice-gift-four-info, .novice-gift-four, .novice-gift-four-info{
+		    padding-top: 1.25rem;
+		    text-align: center;
+		}
+				
+		.novice-gift-five .four-marginTop, .novice-gift-four .four-marginTop {
+		    margin-top: .8rem;
+		}
+		.novice-gift-five .novice-gift-four-btn, .novice-gift-four .novice-gift-four-btn {
+		    width: 4.8rem;
+		    height: 1.12rem;
+		    margin: 0 auto;
+		    margin-top: .3rem;
+		}
+		.novice-gift-five .novice-gift-four-btn img, .novice-gift-four .novice-gift-four-btn img{
+		    width: 100%;
+		    height: 100%;
+		}
+		.action {
+		    text-align: center;
+		    width: 100%;
+		    color: #c0c1d0;
+		    font-size: .22rem;
+		    padding: .36rem 0;
+		}
+		.action .ad {
+		    display: inline-block;
+		    font-size: .16rem;
+		    padding: .02rem .08rem;
+		    border: .01rem solid #c0c1d0;
+		    margin-right: .1rem;
+		}
+    </style>
+</head>
+    <body>
+    	
+	<div class="wrap">
+
+
+		<div class="header-wrap">
+			<div class="header-bg" style="margin-top: -0.88rem;">
+				<div class="rules-activity">
+					<p>活动规则 &gt;</p>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div  class="novice-gift">
+			<div class="novice-gift-one">
+				<div class="novice-gift-one-info">
+					<h4 >12.0<!----><i >%</i></h4>
+					<p >新手专享期望年化
+						<span class="explain_wrap">
+						<img  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAAGXcA1uAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QTlBODE4Nzk4NzFDMTFFOEFEMzZFRkUxMkNCRDMyQjgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QTlBODE4N0E4NzFDMTFFOEFEMzZFRkUxMkNCRDMyQjgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBOUE4MTg3Nzg3MUMxMUU4QUQzNkVGRTEyQ0JEMzJCOCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBOUE4MTg3ODg3MUMxMUU4QUQzNkVGRTEyQ0JEMzJCOCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pr3kDiIAAAMDSURBVHjaYmxoaGAAggogXsYCJMqBuAMkwgTEKxmgACCAGKHKPgMxLxNUkAemDATeggiAAIIpuwrE2gwI8Bdk8k8gZocK/AcpBmJmJqjgX5hFUDofIIBgRoHAYyC+BsTuMAv9oBKyUEFJmATMmDwo/RxkF0hiK1RgOZKrdiJLcCFJOIMkvIHYFYgfQgWfADErQAAhuwrkiI1QhdugYiCvrAdiGyDmAwmwoHkY5r9iIO6B8r2gYiDbwpigVjEyoIJzDJhgNxDrMUEDhx1Ncj8Qb8aiSQekwQ2I3wCxBJIEyMYtaIpBLlGFRTEvEL+AhiHIPyeBOACIv0IDXg6IZYD4GUAAIYcSA1RiNhA7APE9IF4IS2MwwITE/gTEM6DBC/KTJhBfgtoIi3d4sIKsVUKKJBjYBvXPFSh/ExPUCR5oikGmliGHDjRSwU5KgYYxOviFxgelgHKQk04xYAfXsDhvFsiG9zg03MIiJgrSYIdFYh4QP0ATA4XcAZAGNiwa/IFYHk1sHRCnM0ElnqJJVgHxIyS+ONQlD5igirugaQUGZkGDFgRcQEkCmnzgMT0RiK2gEfgVGuawWE4GFQwwkwACDD0tIacpUBoKhxr6HRrbz6F+BiVEZSDmBOJ/0KKsAs0bKEkJBvKBuA+aPWKAOIqBOADKvcegZVER1IcoFkgB8XUg/gJ1/VMshjBDUx0rNAx/oeV2Gag5p4G4CZo5nrFAY+0OEO+CJkdcoB6Ia5FisRaLGlBkSUOLRlBeUWGCuuY3EAcRCIbLSOybBNQGQX0IzgqgwmEPtJog1oIbBNSCzNoLMpsJWkPJExGRIFf/wZFxcaXE10zQGNdDKs9xgf/QygFU5XwjoBZklj4QTwZZ0AnEc6ER44pHkzPU4G/Q3IcvyYLMmgMyG5ZMU6DxsBNaj7tCS31ksBdLBYUMJKDJFdQGiATiFeiF/AoovxqIb0ODZBvUu9hKLDao3Fao2ltQvUwww7HlZHDBDyt4oBEVBc3hIJeJQcVfQX0KqjEzsRURMAAA4ZaoODlx1VgAAAAASUVORK5CYII=" alt="" class="explain_icon">
+					</span></p>
+					<div >
+
+					</div>
+					<span >封闭期21天 出借3.0万元<br>期望回报207.12元</span>
+				</div>
+				<div class="novice-gift-one-btn"><img src="{% static 'images/index/newguideImages/pic-btn.24e6510.png' %}">
+				</div>
+			</div>
+		<div class="novice-gift-one">
+			<div  class="novice-gift-one-info"><h4 >8.0<!----><i >%</i></h4> <p >期望年化回报率<span  class="explain_wrap">
+				<img  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAAGXcA1uAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QTlBODE4Nzk4NzFDMTFFOEFEMzZFRkUxMkNCRDMyQjgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QTlBODE4N0E4NzFDMTFFOEFEMzZFRkUxMkNCRDMyQjgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBOUE4MTg3Nzg3MUMxMUU4QUQzNkVGRTEyQ0JEMzJCOCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBOUE4MTg3ODg3MUMxMUU4QUQzNkVGRTEyQ0JEMzJCOCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pr3kDiIAAAMDSURBVHjaYmxoaGAAggogXsYCJMqBuAMkwgTEKxmgACCAGKHKPgMxLxNUkAemDATeggiAAIIpuwrE2gwI8Bdk8k8gZocK/AcpBmJmJqjgX5hFUDofIIBgRoHAYyC+BsTuMAv9oBKyUEFJmATMmDwo/RxkF0hiK1RgOZKrdiJLcCFJOIMkvIHYFYgfQgWfADErQAAhuwrkiI1QhdugYiCvrAdiGyDmAwmwoHkY5r9iIO6B8r2gYiDbwpigVjEyoIJzDJhgNxDrMUEDhx1Ncj8Qb8aiSQekwQ2I3wCxBJIEyMYtaIpBLlGFRTEvEL+AhiHIPyeBOACIv0IDXg6IZYD4GUAAIYcSA1RiNhA7APE9IF4IS2MwwITE/gTEM6DBC/KTJhBfgtoIi3d4sIKsVUKKJBjYBvXPFSh/ExPUCR5oikGmliGHDjRSwU5KgYYxOviFxgelgHKQk04xYAfXsDhvFsiG9zg03MIiJgrSYIdFYh4QP0ATA4XcAZAGNiwa/IFYHk1sHRCnM0ElnqJJVgHxIyS+ONQlD5igirugaQUGZkGDFgRcQEkCmnzgMT0RiK2gEfgVGuawWE4GFQwwkwACDD0tIacpUBoKhxr6HRrbz6F+BiVEZSDmBOJ/0KKsAs0bKEkJBvKBuA+aPWKAOIqBOADKvcegZVER1IcoFkgB8XUg/gJ1/VMshjBDUx0rNAx/oeV2Gag5p4G4CZo5nrFAY+0OEO+CJkdcoB6Ia5FisRaLGlBkSUOLRlBeUWGCuuY3EAcRCIbLSOybBNQGQX0IzgqgwmEPtJog1oIbBNSCzNoLMpsJWkPJExGRIFf/wZFxcaXE10zQGNdDKs9xgf/QygFU5XwjoBZklj4QTwZZ0AnEc6ER44pHkzPU4G/Q3IcvyYLMmgMyG5ZMU6DxsBNaj7tCS31ksBdLBYUMJKDJFdQGiATiFeiF/AoovxqIb0ODZBvUu9hKLDao3Fao2ltQvUwww7HlZHDBDyt4oBEVBc3hIJeJQcVfQX0KqjEzsRURMAAA4ZaoODlx1VgAAAAASUVORK5CYII=" alt="" class="explain_icon"></span></p> <div ></div> <span >封闭期90天<br>新人专享</span></div>
+			<div class="novice-gift-one-btn"><img  src="{% static 'images/index/newguideImages/pic-btn.24e6510.png' %}"></div></div>
+		<div class="novice-gift-one">
+			<div  class="novice-gift-one-info"><h4 >10.0<!----><i >%</i></h4> <p >期望年化回报率<span  class="explain_wrap"><img  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAAGXcA1uAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QTlBODE4Nzk4NzFDMTFFOEFEMzZFRkUxMkNCRDMyQjgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QTlBODE4N0E4NzFDMTFFOEFEMzZFRkUxMkNCRDMyQjgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBOUE4MTg3Nzg3MUMxMUU4QUQzNkVGRTEyQ0JEMzJCOCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBOUE4MTg3ODg3MUMxMUU4QUQzNkVGRTEyQ0JEMzJCOCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pr3kDiIAAAMDSURBVHjaYmxoaGAAggogXsYCJMqBuAMkwgTEKxmgACCAGKHKPgMxLxNUkAemDATeggiAAIIpuwrE2gwI8Bdk8k8gZocK/AcpBmJmJqjgX5hFUDofIIBgRoHAYyC+BsTuMAv9oBKyUEFJmATMmDwo/RxkF0hiK1RgOZKrdiJLcCFJOIMkvIHYFYgfQgWfADErQAAhuwrkiI1QhdugYiCvrAdiGyDmAwmwoHkY5r9iIO6B8r2gYiDbwpigVjEyoIJzDJhgNxDrMUEDhx1Ncj8Qb8aiSQekwQ2I3wCxBJIEyMYtaIpBLlGFRTEvEL+AhiHIPyeBOACIv0IDXg6IZYD4GUAAIYcSA1RiNhA7APE9IF4IS2MwwITE/gTEM6DBC/KTJhBfgtoIi3d4sIKsVUKKJBjYBvXPFSh/ExPUCR5oikGmliGHDjRSwU5KgYYxOviFxgelgHKQk04xYAfXsDhvFsiG9zg03MIiJgrSYIdFYh4QP0ATA4XcAZAGNiwa/IFYHk1sHRCnM0ElnqJJVgHxIyS+ONQlD5igirugaQUGZkGDFgRcQEkCmnzgMT0RiK2gEfgVGuawWE4GFQwwkwACDD0tIacpUBoKhxr6HRrbz6F+BiVEZSDmBOJ/0KKsAs0bKEkJBvKBuA+aPWKAOIqBOADKvcegZVER1IcoFkgB8XUg/gJ1/VMshjBDUx0rNAx/oeV2Gag5p4G4CZo5nrFAY+0OEO+CJkdcoB6Ia5FisRaLGlBkSUOLRlBeUWGCuuY3EAcRCIbLSOybBNQGQX0IzgqgwmEPtJog1oIbBNSCzNoLMpsJWkPJExGRIFf/wZFxcaXE10zQGNdDKs9xgf/QygFU5XwjoBZklj4QTwZZ0AnEc6ER44pHkzPU4G/Q3IcvyYLMmgMyG5ZMU6DxsBNaj7tCS31ksBdLBYUMJKDJFdQGiATiFeiF/AoovxqIb0ODZBvUu9hKLDao3Fao2ltQvUwww7HlZHDBDyt4oBEVBc3hIJeJQcVfQX0KqjEzsRURMAAA4ZaoODlx1VgAAAAASUVORK5CYII=" alt="" class="explain_icon"></span></p> <div ></div> <span >封闭期365天<br>新人专享</span></div> <div  class="novice-gift-one-btn">
+			<img  src="{% static 'images/index/newguideImages/pic-btn.24e6510.png' %}"></div></div>
+		 <!--
+		 <div class="novice-gift-four">
+		 	<div  class="novice-gift-four-info"><p >完成首次出借 即得</p> <h4 >2888空粉币</h4> <div ></div></div> <div  class="novice-gift-four-btn four-marginTop">
+			 <img  src="{% static '/newguideImages/pic4-btn.8feac08.png' %}"></div></div>
+		 <div class="novice-gift-five">
+		 	<div  class="novice-gift-four-info"><p >商城首次兑换</p> <h4 >全场5折</h4></div> <div  class="novice-gift-four-btn">
+			 <img  src="{% static '/newguideImages/pic5-btn.6f0f6ea.png' %}">
+			</div>
+		</div>
+		 -->
+	</div>
+
+
+
+
+
+		<p class="action"><span  class="ad">广告</span>期望回报非平台承诺回报。网贷有风险，出借需谨慎</p>
+			
+
+
+
+
+
+		<div  id="mask" class="explain_layer" style="display: none;">
+			<div class="layer_body">	未发生《风险提示函》项下风险且《借款协议》及相关协议正常履行完毕后，期望获得的回报与出借（或受让）本金的比率，据此换算成的年化回报率。期望年化回报率仅供参考，不代表实际回报率。
+			</div>
+			 <div class="close_btn">
+				
+			</div>
+		</div>
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+    </html>

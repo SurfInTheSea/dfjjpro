@@ -1,0 +1,647 @@
+.clear:after, .m-header .m-main dl dt > span.n-wk:after, .m-mact-msg span.n-close:after, .m-mact-bg li a:after {
+  width: 100%;
+  height: 0;
+  content: "";
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+
+#wrap {
+  padding-bottom: 1rem;
+}
+
+.m-mact-infobox {
+  width: 100%;
+  height: 4.6rem;
+  background: #ff5c6c;
+}
+
+.m-header {
+  padding: 0.3rem 0.3rem 0.2rem;
+  position: relative;
+}
+
+.m-header .n-zs-yc {
+  position: absolute;
+  top: 1.15rem;
+  left: 0;
+  pointer-events: none;
+}
+
+.m-header .n-msg {
+  position: absolute;
+  width: 0.36rem;
+  height: 0.44rem;
+  right: 0.4rem;
+  top: 50%;
+  margin-top: -0.22rem;
+}
+
+.m-header .n-msg em {
+  position: absolute;
+  min-width: 0.3rem;
+  height: 0.3rem;
+  background: #fff;
+  color: #ff5c6c;
+  font-size: 0.2rem;
+  text-align: center;
+  line-height: 0.3rem;
+  padding: 0 0.05rem;
+  -moz-border-radius: 0.15rem;
+  -webkit-border-radius: 0.15rem;
+  border-radius: 0.15rem;
+  top: -0.08rem;
+  left: 0.21rem;
+}
+
+.m-header .m-main {
+  width: 6.56rem;
+  text-align: left;
+}
+
+.m-header .m-main dl {
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  -webkit-align-items: center;
+}
+
+.m-header .m-main dl dt > span.n-wk {
+  width: 0.68rem;
+  height: 0.68rem;
+  -moz-border-radius: 0.44rem;
+  -webkit-border-radius: 0.44rem;
+  border-radius: 0.44rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.m-header .m-main dl dt > span.n-wk img {
+  font: left;
+  -moz-border-radius: 0.44rem;
+  -webkit-border-radius: 0.44rem;
+  border-radius: 0.44rem;
+}
+
+.m-header .m-main dl dt > span.n-more {
+  width: 0.08rem;
+  height: 0.42rem;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.1rem;
+}
+
+.m-header .m-main dl dd {
+  margin-left: 0.2rem;
+}
+
+.m-header .m-main dl dd .n-username {
+  font-size: 0.24rem;
+  color: #fff;
+}
+
+.m-header .m-main dl dd .n-vip-level span {
+  font-size: 0.22rem;
+  height: 0.32rem;
+  line-height: 0.32rem;
+  padding: 0 0.1rem;
+  -moz-border-radius: 0.16rem;
+  -webkit-border-radius: 0.16rem;
+  border-radius: 0.16rem;
+  background: #fff;
+  color: #ff5c6c;
+  display: inline-block;
+}
+
+.m-mact-total {
+  text-align: center;
+  color: #fff;
+  margin-top: 0.24rem;
+}
+
+.m-mact-total .n-total p.n-t {
+  font-size: 0.28rem;
+}
+
+.m-mact-total .n-total p.n-m big {
+  font-size: 0.88rem;
+  font-family: arial;
+}
+
+.m-mact-total .n-income {
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  -webkit-align-items: center;
+  margin-top: 0.24rem;
+  padding-bottom: 0.3rem;
+}
+
+.m-mact-total .n-income dl {
+  width: 50%;
+  position: relative;
+}
+
+.m-mact-total .n-income dl dt {
+  font-size: 0.24rem;
+}
+
+.m-mact-total .n-income dl dd {
+  font-size: 0.4rem;
+  padding-top: 0.05rem;
+}
+
+.m-mact-total .n-income dl:first-child:after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0.74rem;
+  right: 0;
+  top: 50%;
+  margin-top: -0.37rem;
+  border-right: #ff8d98 solid 1px;
+}
+
+.m-mact-msg {
+  width: 100%;
+  height: auto;
+  display: -webkit-flex;
+  display: flex;
+  background: #f2e5e0;
+  font-size: 0.26rem;
+  color: #ff6d24;
+  padding: 0.17rem 0.3rem;
+  align-items: center;
+  -webkit-align-items: center;
+}
+
+.m-mact-msg p {
+  width: 100%;
+  font-size: 0.26rem;
+}
+
+.m-mact-msg span.n-close {
+  width: 0.28rem;
+  height: 0.27rem;
+}
+
+.m-mact-msg span.n-close img {
+  float: left;
+}
+
+.m-mact-bg li {
+  margin-top: 0.2rem;
+}
+
+.m-mact-bg li a img {
+  float: left;
+}
+
+/* 我的账户 */
+.m-myinvest-mine{
+  background: #fff;
+  margin-top: 0.2rem;
+}
+
+.m-myinvest-mine h2 {
+  height: 0.88rem;
+  padding: 0 0.3rem;
+  line-height: 0.88rem;
+  font-size: 0.3rem;
+  font-weight: normal;
+  color: #666666;
+  border-bottom: #eee solid 1px;
+}
+
+.m-myinvest {
+  background: #fff;
+  /*height: 2.48rem;*/
+  /*margin-top: 0.2rem;*/
+  border-top: #eee solid 1px;
+}
+
+.m-myinvest h2 {
+  height: 0.88rem;
+  padding: 0 0.3rem;
+  line-height: 0.88rem;
+  font-size: 0.3rem;
+  font-weight: normal;
+  color: #666;
+  border-bottom: #eee solid 1px;
+}
+
+.my-category ul {
+  height: 1.6rem;
+}
+
+.my-category ul li {
+  -webkit-justify-content: center;
+  justify-content: center;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+.my-category ul li a {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.my-category ul li a span {
+  width: 0.56rem;
+  height: 0.56rem;
+  display: inline-block;
+}
+
+.my-category ul li a p {
+  font-size: 0.26rem;
+  color: #666;
+  margin-top: 0.1rem;
+}
+
+.m-mact-main {
+  margin-top: 0.2rem;
+  background: #fff;
+}
+
+.m-mact-main li {
+  padding-left: 1rem;
+}
+
+.m-mact-main li a {
+  display: -webkit-flex;
+  display: flex;
+  height: 1.05rem;
+  align-items: center;
+  -webkit-align-items: center;
+  border-top: #eee solid 1px;
+}
+
+.m-mact-main li a span.n-left {
+  width: 1.75rem;
+  font-size: 0.3rem;
+  color: #666;
+  position: relative;
+}
+
+.m-mact-main li a span.n-left em.n-icon {
+  position: absolute;
+  width: 0.48rem;
+  height: 0.48rem;
+  left: -0.73rem;
+}
+
+.m-mact-main li a span.n-right {
+  width: 4.74rem;
+  text-align: right;
+  padding-right: 0.35rem;
+}
+
+.m-mact-main li a span.n-right em.n-mag {
+  padding: 0 0.1rem;
+  background: #ff5c6c;
+  color: #fff;
+  display: inline-block;
+  font-size: 0.2rem;
+  height: 0.34rem;
+  line-height: 0.34rem;
+  min-width: 0.82rem;
+  -moz-border-radius: 0.17rem;
+  -webkit-border-radius: 0.17rem;
+  border-radius: 0.17rem;
+  text-align: center;
+}
+
+.m-mact-main li a span.n-right em.n-jt-r {
+  width: 0.1rem;
+  display: inline-block;
+  margin-left: 0.2rem;
+}
+
+.m-mact-main li:first-child a {
+  border-top: none;
+}
+
+.m-mact-main.m-asset-main li a span.n-left {
+  width: 4rem;
+}
+
+.m-mact-main.m-asset-main li a span.n-left em {
+  position: absolute;
+  width: 0.16rem;
+  height: 0.16rem;
+  left: -0.44rem;
+  top: 50%;
+  margin-top: -0.08rem;
+  -moz-border-radius: 0.08rem;
+  -webkit-border-radius: 0.08rem;
+  border-radius: 0.08rem;
+}
+
+.m-mact-main.m-asset-main li a span.n-left em.n-day {
+  background: #fe908d;
+}
+
+.m-mact-main.m-asset-main li a span.n-left em.n-month {
+  background: #fcd07e;
+}
+
+.m-mact-main.m-asset-main li a span.n-left em.n-season {
+  background: #9de0a4;
+}
+
+.m-mact-main.m-asset-main li a span.n-left em.n-year {
+  background: #d9cbf3;
+}
+
+.m-mact-main.m-asset-main li a span.n-left em.n-tg {
+  background: #a9dafc;
+}
+
+.m-mact-main.m-asset-main li a span.n-left em.n-xnbj {
+  background: #9eeeed;
+}
+
+.m-mact-main.m-asset-main li a span.n-left p.n-text {
+  font-size: 0.3rem;
+  color: #666;
+}
+
+.m-mact-main.m-asset-main li a span.n-right {
+  width: 2.60rem;
+}
+
+.m-mact-main.m-asset-main li a span.n-right em.n-mx {
+  font-size: 0.3rem;
+  color: #ff5c6c;
+}
+
+.m-mact-btnbox {
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  -webkit-align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin-top: 0.4rem;
+}
+
+.m-mact-btnbox a {
+  width: 3.3rem;
+  height: 0.86rem;
+  text-align: center;
+  line-height: 0.86rem;
+  font-size: 0.32rem;
+  margin: 0 0.15rem;
+  -moz-border-radius: 0.05rem;
+  -webkit-border-radius: 0.05rem;
+  border-radius: 0.05rem;
+}
+
+.m-mact-btnbox a.n-btn-zr {
+  border: #ddd solid 1px;
+  background: #fff;
+  line-height: 0.84rem;
+  color: #666;
+}
+
+.m-mact-btnbox a.n-btn-tz {
+  background: #1cc7b9;
+  color: #fff;
+}
+
+.m-asset-tab {
+  background: #fff;
+  height: 0.97rem;
+  display: -webkit-flex;
+  display: flex;
+  padding: 0 0.3rem;
+  border-bottom: #eee solid 1px;
+}
+
+.m-asset-tab li {
+  width: 2.5rem;
+  text-align: center;
+  padding-top: 0.04rem;
+}
+
+.m-asset-tab li span {
+  font-size: 0.26rem;
+  line-height: 0.89rem;
+  display: inline-block;
+}
+
+.m-asset-tab li.active span {
+  border-bottom: #ff5c6c solid 0.04rem;
+}
+
+.m-pie {
+  height: 4.71rem;
+  background: #fff;
+  position: relative;
+}
+
+.m-astotal {
+  position: absolute;
+  width: 100%;
+  height: 1rem;
+  left: 0;
+  top: 1.75rem;
+  text-align: center;
+}
+
+.m-astotal p {
+  font-size: 12px;
+  color: #a5a5a5;
+}
+
+.m-astotal span {
+  font-size: 20px;
+  color: #666;
+}
+
+#myAssetsPie {
+  height: 180px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -90px;
+}
+
+.n-tlbtn-tz {
+  width: 6.7rem;
+  height: 0.98rem;
+  background: #1cc7b9;
+  color: #fff;
+  display: block;
+  margin: 0.6rem auto 0;
+  font-size: 0.34rem;
+}
+
+
+.m-asset-centent {
+  position: relative;
+}
+
+.m-asset-centent .go-team {
+  width: auto;
+  position: absolute;
+  height: .5rem;
+  line-height: .5rem;
+  -moz-border-radius: 0.25rem 0 0 0.25rem;
+  -webkit-border-radius: 0.25rem 0 0 0.25rem;
+  border-radius: 0.25rem 0 0 0.25rem;
+  border: #ff5c6c solid 1px;
+  border-right: 0;
+  right: 0;
+  top: .3rem;
+  padding: 0 .17rem;
+  z-index: 1;
+  color: #ff5c6c;
+  font-size: .2rem;
+}
+
+.m-asset-centent .go-team em {
+  display: inline-block;
+  width: .1rem;
+  height: .18rem;
+  margin-left: .12rem;
+}
+
+
+
+
+.m-mact-main li a span.n-left .n-xfd-tx {
+  width: 1.94rem;
+  position: absolute;
+  left: 1.68rem;
+  height: .64rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.m-mact-main li a span.n-left .n-xfd-tx em {
+  position: absolute;
+  width: .64rem;
+  height: .64rem;
+  -moz-border-radius: 0.32rem;
+  -webkit-border-radius: 0.32rem;
+  border-radius: 0.32rem;
+  overflow: hidden;
+  border: #fff solid .04rem;
+  background: #ffeef0;
+  line-height: .54rem;
+  text-align: center;
+  font-size: .28rem;
+  color: #ff5c6c;
+}
+
+.m-mact-main li a span.n-left .n-xfd-tx em:nth-child(1) {
+  z-index: 4;
+}
+
+.m-mact-main li a span.n-left .n-xfd-tx em:nth-child(2) {
+  z-index: 3;
+  left: 0.4rem;
+}
+
+.m-mact-main li a span.n-left .n-xfd-tx em:nth-child(3) {
+  z-index: 2;
+  left: 0.8rem;
+}
+
+.m-mact-main li a span.n-left .n-xfd-tx em:nth-child(4) {
+  z-index: 1;
+  left: 1.2rem;
+}
+
+.m-mact-main li a span.n-right {
+  width: 4.74rem;
+  text-align: right;
+  padding-right: 0.35rem;
+}
+
+.m-mact-main li a span.n-right em.n-mag {
+  padding: 0 0.1rem;
+  background: #ff5c6c;
+  color: #fff;
+  display: inline-block;
+  font-size: 0.2rem;
+  height: 0.34rem;
+  line-height: 0.34rem;
+  min-width: 0.82rem;
+  -moz-border-radius: 0.17rem;
+  -webkit-border-radius: 0.17rem;
+  border-radius: 0.17rem;
+  text-align: center;
+}
+
+.m-mact-main li a span.n-right em.n-jt-r {
+  width: 0.1rem;
+  display: inline-block;
+  margin-left: 0.2rem;
+}
+
+.m-mact-main li:first-child a {
+  border-top: none;
+}
+
+.m-mact-main.m-asset-main li a span.n-left {
+  width: 4rem;
+}
+
+.m-mact-main.m-asset-main li a span.n-left em {
+  position: absolute;
+  width: 0.16rem;
+  height: 0.16rem;
+  left: -0.44rem;
+  top: 50%;
+  margin-top: -0.08rem;
+  -moz-border-radius: 0.08rem;
+  -webkit-border-radius: 0.08rem;
+  border-radius: 0.08rem;
+}
+
+.m-mact-main.m-asset-main li a span.n-left em.n-fund {
+  background: #f5b8e5;
+}
+
+.m-mact-main.m-asset-main li a span.n-left em.n-exchange {
+  background: #B572F2;
+}
+
+.m-mact-main.m-asset-main li a span.n-left em.n-day {
+  background: #fe908d;
+}
+
+.m-mact-main.m-asset-main li a span.n-left em.n-month {
+  background: #fcd07e;
+}
+
+.m-mact-main.m-asset-main li a span.n-left em.n-season {
+  background: #9de0a4;
+}
+
+.m-mact-main.m-asset-main li a span.n-left em.n-year {
+  background: #d9cbf3;
+}
+
+.m-mact-main.m-asset-main li a span.n-left em.n-tg {
+  background: #a9dafc;
+}
+
+.m-mact-main.m-asset-main li a span.n-left em.n-xnbj {
+  background: #9eeeed;
+}
+
+.m-mact-main.m-asset-main li a span.n-left em.n-mhjh {
+  background: #fdb1f0;
+}
+.n-depositBalance {
+	background: rgb(241,158,156)
+}
+

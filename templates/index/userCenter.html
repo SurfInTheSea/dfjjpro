@@ -1,0 +1,237 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en" style="font-size: 50px;">
+<head>
+    <link rel="shortcut icon" href="{%static '/favicon.ico' %}" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>用户中心</title>
+
+    <script type="text/javascript" src="{% static '/userCenter/rem.js' %}"></script>
+	<script type="text/javascript" src="{%static '/userCenter/public.js' %}"></script>
+	<script type="text/javascript" src="{% static '/userCenter/jquery.min.js' %}"></script>
+	<!-- 
+	
+	<script src="https://m.wukonglicai.com/javascript/jquery.drag.js"></script>
+	<script type="text/javascript" src="https://m.wukonglicai.com/extra/userRedAccount/js/swiper-3.3.1.jquery.min.js"></script>
+	<script type="text/javascript" src="https://m.wukonglicai.com/javascript/cookie.js"></script>
+	<script type="text/javascript" src="https://m.wukonglicai.com/javascript/growingSDK.js"></script>
+	<script type="text/javascript" src="https://m.wukonglicai.com/javascript/deposit/upgrade.js"></script>
+	-->
+
+	<link rel="stylesheet" href="{% static '/userCenter/global.css' %}"/>
+	<link rel="stylesheet" href="{% static '/userCenter/my-account.css' %}" />
+	<link rel="stylesheet" href="{% static '/userCenter/base.css' %}" />
+	<link rel="stylesheet" href="{% static '/userCenter/zhezhao.css' %}"/>
+	<link rel="stylesheet" type="text/css" href="{% static '/userCenter/nav.css' %}"/>
+	<!-- 
+	<link rel="stylesheet" href="https://m.wukonglicai.com/extra/userRedAccount/css/swiper.min.css?t=20181030" />
+	-->
+	<script type="text/javascript" src="{%static '/userCenter/jquery-3.2.1.js' %}"></script>
+	<script type="text/javascript" src="{%static '/userCenter/jquery-3.2.1.min.js' %}"></script>
+
+</head>
+<body>
+	
+    <style type="text/css">
+    	body, html {
+		    width: 100%;
+		    height: 100%;
+		    background: #f7f7f7;
+		}
+		html, body {
+		    width: 100%;
+		    margin: 0 auto;
+		    max-width: 750px;
+		    background-color: #f0f3f5;
+		    position: relative;
+		}
+    	.bom-box {
+		    position: fixed;
+		    z-index: 11;
+		    width: 5.83rem;
+		    height: 6rem;
+		    left: 0;
+		    top: 0;
+		    right: 0;
+		    bottom: 0;
+		    margin: auto;
+		    text-align: center;
+		}
+		.bom-box span {
+		    display: inline-block;
+		    width: 5.83rem;
+		    height: 4.68rem;
+		}
+		img {
+		    border: none;
+		    width: 100%;
+		    height: auto;
+		}
+		.bom-box a.n-btn {
+		    width: 5.4rem;
+		    margin: 0 auto;
+		    height: 0.86rem;
+		    display: block;
+		    background-color: #1cc7b9;
+		    font-size: 0.34rem;
+		    text-align: center;
+		    line-height: 0.86rem;
+		    color: #fff;
+		    border-radius: 6px;
+		    margin-top: ;
+		}
+
+    </style>
+
+
+		{% if request.session.is_login %}
+		
+					<div id="wrap">
+				<div id="container">
+				<div class="m-mact-infobox">
+				<div class="m-header">
+				<span class="n-zs-yc"><img src="{% static '/userCenter/mact-yc.png' %}" alt=""></span>
+				<div class="m-main">
+				<dl>
+				<dt>
+					<span class="n-more"><img src="{% static '/userCenter/icon-more.png' %}" alt=""></span>
+					<span class="n-wk" id="tosetting"><img src="{% static '/userCenter/user-tx.png' %}" alt=""></span></dt>
+				<dd>
+					<!-- -->
+					{% if request.session.is_login %}
+						<p class="n-username" id="mobile">{{ request.session.user_name }}</p>
+					{% else %}
+						<p class="n-username" id="mobile">账户名称</p>
+					{% endif %}						
+					
+					
+				<!-- 
+					<p class="n-vip-level"><span>会员等级</span></p>
+				-->
+				</dd>
+				</dl>
+				</div>
+				<span class="n-msg" id="tomsg"><img src="{% static '/userCenter/icon-msg.png' %}" alt=""><em id="msgcount" style="display:none;"></em></span>
+				</div>
+				<div class="m-mact-total">
+				
+					<div class="n-total" onclick="toTotalAssets('yesterdayEarnings')">
+						<p class="n-t">总资产</p>
+						<p class="n-m">
+						{% if moneyTotall %}
+							<big id="yestodayBenefit">{{ moneyTotall }}</big>
+						{% else %}
+							<big id="yestodayBenefit">--</big>
+						{% endif %}
+
+						</p>
+					</div>
+				
+				<div class="n-income">
+				<dl id="yestodayBenefitDl" onclick="toTotalAssets('totalAssets')">
+				<dt>活动资金(元):</dt>
+
+					{% if request.session.is_login %}
+						<dd id="currentTotalMoney">{{ moneyNow }}</dd>
+					{% else %}
+						<dd id="currentTotalMoney">--</dd>
+					{% endif %}	
+
+				
+				</dl>
+				<dl onclick="toTotalAssets('accumulatedIncome')">
+				<dt>今日预计盈利<img name="showExplainImg" onclick="showExplain(10)" style="width: 0.3rem; margin-left: 0.1rem;" src="{% static '/userCenter/exclamation_mark2.png' %}"></dt>
+				{% if payToday %}
+				<dd id="accumulatedIncome">{{ payToday }}</dd>
+				{% else %}
+				<dd id="accumulatedIncome">--</dd>
+				{% endif %}
+
+				</dl>
+				</div>
+				</div>
+				</div>
+				
+				<ul class="m-mact-main">
+				<li>
+				<a href="/personalProgramDetails">
+				<span class="n-left"><em class="n-icon"><img src="{% static '/userCenter/icon-tq.png' %}" alt=""></em>我的产品</span>
+				<span class="n-right">
+				<em class="n-jt-r"><img src="https://m.wukonglicai.com/extra/userRedAccount/img/ico-right-sj.svg" alt=""></em></span>
+				</a>
+				</li>
+				<li>
+				<a href="#">
+				<span class="n-left"><em class="n-icon"><img src="{% static '/userCenter/icon-kfjlb.png' %}" alt=""></em>充值信息</span>
+				<span class="n-right">
+				<em class="n-jt-r"><img src="https://m.wukonglicai.com/extra/userRedAccount/img/ico-right-sj.svg" alt=""></em></span>
+				</a>
+				</li>
+				<li>
+				<a href="#">
+				<span class="n-left"><em class="n-icon"><img src="{% static '/userCenter/icon-baibx.png' %}" alt=""></em>这确实是一个问题</span>
+				<span class="n-right">
+				<em class="n-jt-r"><img src="https://m.wukonglicai.com/extra/userRedAccount/img/ico-right-sj.svg" alt=""></em></span>
+				</a>
+				</li>
+				<li>
+				<a href="/banckAndaccount">
+				<span class="n-left"><em class="n-icon"><img src="{% static '/userCenter/icon-set.png' %}" alt=""></em>账户设置</span>
+				<span class="n-right">
+				<em class="n-jt-r"><img src="https://m.wukonglicai.com/extra/userRedAccount/img/ico-right-sj.svg" alt=""></em></span>
+				</a>
+				</li>
+				<li>
+				<a href="#">
+				<span class="n-left"><em class="n-icon"><img src="{% static '/userCenter/icon-moreb.png' %}" alt=""></em>更多</span>
+				<span class="n-right">
+				<em class="n-jt-r"><img src="https://m.wukonglicai.com/extra/userRedAccount/img/ico-right-sj.svg" alt=""></em></span>
+				</a>
+				</li>
+				</ul>
+
+
+
+				</div>
+				<footer class="foot-cyp">
+				<p>期望回报并非平台承诺回报，网贷有风险，出借需谨慎</p>
+				</footer>
+				</div>
+
+{% include 'includeBase.html' %}
+
+
+
+
+
+		 {% if messages %}
+	        <script>
+	            {% for msg in messages %}
+	                alert('{{ msg.message }}');
+	            {% endfor %}
+	        </script>
+	    {% endif %}
+
+
+		{% else %}
+			<div class="bom-box">
+			<span><img src="{% static '/userCenter/wukongimg.png' %}" alt=""></span>
+			<a href="/login" class="n-btn">开始挣钱</a>
+			</div>
+
+		{% endif %}
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

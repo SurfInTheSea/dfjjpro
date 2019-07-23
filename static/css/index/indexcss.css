@@ -1,0 +1,117 @@
+.carousel-item img{
+	width: 100%;
+}
+
+.swiper-container {
+      width: 100%;
+      height: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+.swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+    .m-pro{
+    	margin-top:.23rem;
+    	height: 23rem;
+    }
+
+
+
+.n-pro-main{
+	width: 100%;
+
+	height: 100%;
+}
+.n-top{
+	width: 100%;
+	height: 15%;
+
+}
+.n-top span{
+	margin-left: 20px;
+	top:50%;
+	transform: translateY(50%);
+	float: left;
+}
+.n-top a{
+	top:50%;
+	transform: translateY(50%);
+	float: right;
+	margin-right: 20px;
+	color:#a5a5a5;
+}
+.n-main{
+	width: 100%;
+	height: 80%;
+}
+.n-box{
+	width: 100%;
+	height: 75%;
+}
+.n-mag{
+	padding-top: 1rem;
+	font-size: 0.8rem;
+	color:#a5a5a5;
+}
+.n-int-rate{
+	font-size: 4rem;
+	color:#ff5c6c;
+	font-weight: normal;
+	margin:.02rem 0 .12rem;
+}
+.n-int-rate em{
+	font-size: 1rem;
+}
+.n-magb{
+	width: 100%;
+	height: 10px;
+}
+.n-qual{
+	display:flex;
+	display: -webkit-flex;
+	justify-content: space-around;
+	height: 0.24rem;
+	line-height: 0.2rem;
+	font-size: 0.8rem;
+	padding-top: 2rem;
+}
+.n-qual span{
+	float: none;
+	width: 1.86rem;
+	line-height: .35rem;
+	flex:3;
+}
+
+
+.n-btn{
+	display: flex;
+	-webkit-align-items:center;
+	justify-content: center;
+	height: 2.5rem;
+	width: 80%;
+	margin-left:10%;
+	background-color: #44cec2;
+	border-radius: 0.3rem;
+}
+.n-btn a{
+	width: 100%;
+	flex-wrap: wrap;
+	color: #fff;
+}

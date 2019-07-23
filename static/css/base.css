@@ -1,0 +1,13 @@
+body{
+    font-family:sans-serif;
+    font-size:12px;
+    color:#666;
+    background-color: #f0f3f5;
+}
+
+.padding{
+  padding-bottom: 1rem;
+}
+a{
+	color: #666;
+}

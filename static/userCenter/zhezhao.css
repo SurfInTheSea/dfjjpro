@@ -1,0 +1,230 @@
+.zhezhao{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: #000;
+	opacity: 0.4;
+	display: none;
+}
+.showDiv{
+	position: fixed;
+	top: 130px;
+	left: 0;
+	width: 100%;
+	display: none;
+	z-index: 1002;
+}
+.zhe{
+	margin:0 12px;
+	background: #fff;	
+	display: none;
+	border-radius: 3px;
+	padding: 20px 30px;
+}
+.zhe h1{
+	display: -webkit-box;
+	-webkit-box-pack:center;
+	height: 40px;
+	line-height: 40px;
+	color:#333;
+	font-family: '微软雅黑';
+	font-size: 16px;
+}
+.zhe p{
+	display: -webkit-box;
+	-webkit-box-pack:center;
+	color:#999999;	
+	font-family: '微软雅黑';
+	line-height: 20px;
+	font-weight: 500;
+	font-size: 14px;
+	text-align: center;
+	padding-bottom:12px;
+}
+.zhe div{
+	display: flex;
+	justify-content: space-between;
+}
+.zhe span{
+
+	background: #1acbbb;
+	height: 40px;
+	line-height: 40px;
+	color:#fff;
+	font-weight: bold;
+	font-family: '微软雅黑';
+	border-radius:5px;
+	box-shadow:0 5px 0 0 #10b8a9;
+	flex: 1;
+	text-align: center;
+    margin: 0 1rem;
+	font-size: .4rem;
+    display: block;
+
+}
+.coverBox{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index:9;
+	display: none;
+}
+.coverBoxs{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index:9;
+	display: none;
+}
+.coverBoxDiv {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #000;
+	opacity: .3;
+}
+.coverBoxText{
+	position: absolute;
+	top: 4.8rem;
+	left: .78rem;
+	right: .78rem;
+	width: 5.94rem;
+	height: 3.53rem;
+	background: #fff;
+	border-radius: .07rem;
+}
+.coverBoxText h1{
+	margin-top: .4rem;
+	color: #333;
+	text-align: center;
+	font-size: .36rem;
+}
+.coverBoxText p{
+	margin: .2rem .36rem 0 .36rem;
+	font-size: .28rem;
+	color: #888;
+	text-align: center;
+}
+.coverBoxTextBut {
+	display: flex;
+	margin: 0 .5rem;
+}
+.coverBoxText button:nth-child(1){
+	font-size: 0.32rem;
+	color: #999999;
+	margin-right: .1rem;
+	background: #EFEFEF;
+	box-shadow: 0 0.09rem 0 #D9D9D9;
+}
+.coverBoxText button:nth-child(2){
+	font-size: 0.32rem;
+	box-shadow: 0 0.09rem 0  #10B8A9;
+}
+.coverBoxText button{
+	flex: 1;
+	height: .85rem;
+	background: #1CC7B9;
+	border-radius: .08rem;
+	margin-top: .48rem;
+	font-size: .35rem;
+	color: #fff;
+	margin-bottom: .3rem;
+}
+#noBox {
+
+}
+.logoutBox1{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 9;
+	display: none;
+}
+.coverBox1{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #000;
+	opacity: .3;
+}
+.logoutCenter{
+	position: fixed;
+	left: .78rem;
+	right: .78rem;
+	top: 4.4rem;
+}
+.logoutCenterTop{
+	background: #E9E6DF;
+	height: .22rem;
+	border-top-left-radius: .07rem;
+	border-top-right-radius: .07rem;
+}
+.logoutCenterBoxText{
+	text-align: center;
+	padding-top: .41rem;
+	font-size: .36rem;
+}
+.logoutCenterBox{
+	background: #fff;
+}
+.logoutCenterBoxTextTwo{
+	font-size: .28rem;
+	color: #888888;
+	margin: .2rem .3rem 0 .3rem;
+}
+.logoutBoxFooter{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	padding: .48rem .55rem .25rem .55rem;
+}
+.logoutBoxFooterchildrens button{
+	background: #EFEFEF;
+	color: #999999;
+	font-size: .32rem;
+}
+.logoutBoxFooterchildrens div{
+	background: #D9D9D9
+}
+.logoutBoxFooterchildrena{
+	margin-left: .3rem;
+}
+.logoutBoxFooter div:nth-child(2) button{
+	background: #1ACBBB;
+	color: #fff;
+	font-size: .32rem;
+}
+.logoutBoxFooter div:nth-child(2) div{
+	background: #10B8A9;
+}
+.logoutBoxFooterchildren{
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-moz-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+.logoutBoxFooterchildren button{
+	height: .8rem;
+	width: 100%;
+	border-radius: .07rem;
+}
+.logoutBoxFooterchildren div{
+	height: .2rem;
+	border-radius: .07rem;
+	margin-top: -.1rem;
+}

@@ -1,0 +1,282 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+
+{% block title %}
+大发基金|首页
+{% endblock %}
+
+
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/index/swiper.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static '/css/index/indexcss.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static '/css/index/nav.css' %}">
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}
+
+{% block content %}
+
+
+	
+			
+
+
+
+	
+
+		<div id="slides " class="carousel slide padding" data-ride="carousel">
+			
+			<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img  src="{% static 'images/index/banner/banner0.jpg' %}">
+						</div>
+						<div class="carousel-item ">
+							<img src="{% static 'images/index/banner/banner1.png' %}">
+						</div>
+					</div>
+				</div>
+
+
+
+<div class="container-fluid padding ">
+	<div class="row text-center">
+		<a class="col-3" href="/newguide">
+			<img class="col-12" src="{% static 'images/index/col-1.png' %}">
+			<span >新手礼包</span>
+		</a>
+
+		<a class="col-3" href="http://dfpt.com/">
+			<img class="col-12" src="{% static 'images/index/col-2.png' %}">
+			<span >大发官网</span>
+		</a>
+
+		<a class="col-3" href="http://p.qiao.baidu.com/cps/chatIndex?speedLogId=1563838501852354b_1563838501852_24336&reqParam=%7B%22from%22%3A0%2C%22sessionid%22%3A%22%22%2C%22siteId%22%3A%2213677758%22%2C%22tid%22%3A%22-1%22%2C%22userId%22%3A%2228505655%22%2C%22ttype%22%3A1%2C%22siteConfig%22%3A%7B%22wsUrl%22%3A%22wss%3A%2F%2Fp.qiao.baidu.com%2Fcps%2Fwebsocket%22%2C%22eid%22%3A%2228505655%22%2C%22queuing%22%3A%22%22%2C%22likeVersion%22%3A%22%22%2C%22siteId%22%3A%2213677758%22%2C%22online%22%3A%22true%22%2C%22webRoot%22%3A%22%2F%2Fp.qiao.baidu.com%2Fcps%2F%22%2C%22bid%22%3A%22156383850200920180%22%2C%22userId%22%3A%2228505655%22%2C%22isGray%22%3A%22false%22%2C%22invited%22%3A0%7D%2C%22config%22%3A%7B%22themeColor%22%3A%224d74fa%22%7D%7D">
+			<img class="col-12" src="{% static 'images/index/col-3.png' %}">
+			<span >马上提现</span>
+		</a>
+		<a class="col-3" href="http://p.qiao.baidu.com/cps/chatIndex?speedLogId=1563838501852354b_1563838501852_24336&reqParam=%7B%22from%22%3A0%2C%22sessionid%22%3A%22%22%2C%22siteId%22%3A%2213677758%22%2C%22tid%22%3A%22-1%22%2C%22userId%22%3A%2228505655%22%2C%22ttype%22%3A1%2C%22siteConfig%22%3A%7B%22wsUrl%22%3A%22wss%3A%2F%2Fp.qiao.baidu.com%2Fcps%2Fwebsocket%22%2C%22eid%22%3A%2228505655%22%2C%22queuing%22%3A%22%22%2C%22likeVersion%22%3A%22%22%2C%22siteId%22%3A%2213677758%22%2C%22online%22%3A%22true%22%2C%22webRoot%22%3A%22%2F%2Fp.qiao.baidu.com%2Fcps%2F%22%2C%22bid%22%3A%22156383850200920180%22%2C%22userId%22%3A%2228505655%22%2C%22isGray%22%3A%22false%22%2C%22invited%22%3A0%7D%2C%22config%22%3A%7B%22themeColor%22%3A%224d74fa%22%7D%7D">
+			<img class="col-12" src="{% static 'images/index/col-4.png' %}">
+			<span >立即充值</span>
+		</a>
+		
+	</div>
+</div>
+
+
+<div class="container ">
+	
+			  <!-- Swiper -->
+		  <div class="swiper-container border rounded m-pro">
+		    <div class="swiper-wrapper">
+		      
+		      		    {% for programInfo in programInfos %}
+		      		    <div class="swiper-slide">
+		      		    	<div class="n-pro-main">
+								  		<div class="n-top shadow-sm">
+								  			<span> {{ programInfo.name }}</span>
+								  			<a  href="/programDetails/{{ programInfo.id }}">详情<em>
+								  				<img src="https://m.wukonglicai.com/img/ico-right-sj.svg" alt="">
+								  			</em>
+								  		</a>
+								  	</div>
+
+								  	<div class="n-main">
+								  		<div class="n-box">
+								  			<p class="n-mag">期望年化回报率<img name="showExplainImg" onclick="showExplain(1)" style="width: 1rem; margin-left: 0.3rem;" src="{% static '/images/index/exclamation_mark2.png' %}"></p>
+								  			
+								  			
+								  			<h2 class="n-int-rate">{{ programInfo.payBack }}<em>%</em></h2>
+								  			
+								  			<p class="n-magb"></p>
+								  			
+								  			
+
+								  			<div class="n-qual">
+								  				<span>封闭期{{ programInfo.payDay }}天</span>
+								  				<span>最低{{ programInfo.minPay }}元起</span>
+								  				
+								  				<span>出借无上限</span>
+								  				
+								  			</div>
+								  			
+								  			
+								  		</div>
+								  		<div class="n-btn">
+								  			<a href="/programDetails/{{ programInfo.id }}">
+								  				<big>马上加入</big>
+								  			</a>
+								  		</div>
+								  	</div>
+								  </div>
+							</div>
+						 {% empty %}
+						 	<div class="swiper-slide"><h1>暂时没有发布理财产品</h1></div>
+						{% endfor %}
+											
+					  	
+					
+
+		     
+		    
+		    </div>
+		    <!--
+
+
+				  <div class="swiper-slide">Slide 2</div>
+		      <div class="swiper-slide">Slide 3</div>
+		      <div class="swiper-slide">Slide 4</div>
+		      <div class="swiper-slide">Slide 5</div>
+		      <div class="swiper-slide">Slide 6</div>
+		      <div class="swiper-slide">Slide 7</div>
+		      <div class="swiper-slide">Slide 8</div>
+		      <div class="swiper-slide">Slide 9</div>
+		      <div class="swiper-slide">Slide 10</div>
+
+		     Add Pagination 
+		    <div class="swiper-pagination"></div>-->
+		    <!-- Add Arrows 
+		    <div class="swiper-button-next"></div>
+		    <div class="swiper-button-prev"></div>-->
+		  </div>
+</div>
+
+
+  <!-- Swiper JS -->
+  <script src="{% static 'javascripts/swiper.min.js' %}"></script>
+
+  <!-- Initialize Swiper -->
+
+
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 1,
+      autoplay: 2800,
+      spaceBetween: 30,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+
+
+
+
+
+
+
+
+<!-- 
+
+
+  <div class="swiper-container m-pro swiper-container-horizontal">
+    <div class="swiper-wrapper swiper-wrapper">
+      
+    <div class="swiper-slide n-pro-list ">Slide 1</div>
+      <div class="swiper-slide n-pro-list ">Slide 2</div>
+      <div class="swiper-slide n-pro-list">Slide 3</div>
+      <div class="swiper-slide n-pro-list">Slide 4</div>
+      <div class="swiper-slide n-pro-list">Slide 5</div>
+      <div class="swiper-slide n-pro-list">Slide 6</div>
+      <div class="swiper-slide n-pro-list">Slide 7</div>
+      <div class="swiper-slide n-pro-list">Slide 8</div>
+      <div class="swiper-slide n-pro-list">Slide 9</div>
+      <div class="swiper-slide n-pro-list">Slide 10</div>
+
+
+    
+    {% for programInfo in programInfos %}
+        <div class="swiper-slide n-pro-list ">
+            <div class="n-pro-main">
+                            <div class="n-top">
+                                <span>{{ programInfo.name }}</span>
+                                <a href="/programDetails/{{ programInfo.id }}">详情<em>
+                                    <img src="https://m.wukonglicai.com/img/ico-right-sj.svg" alt="">
+                                </em>
+                                </a>
+                            </div>
+                            <div class="n-main">
+                                <div class="n-box">
+                                    <p class="n-mag">期望年化回报率<img name="showExplainImg" onclick="showExplain(1)" style="width: 0.3rem; margin-left: 0.1rem;" src="{% static '/images/exclamation_mark2.png' %}"></p>
+                                        
+                                            
+                                                <h2 class="n-int-rate">{{ programInfo.payBack }}<em>%</em></h2>
+                                            
+                                            <p class="n-magb"></p>
+                                        
+                                    
+
+                                            <div class="n-qual">
+                                                <span>封闭期{{ programInfo.payDay }}天<p style="display: inline-block;"><img name="showExplainImg" onclick="showExplain(2)" style="width: 0.3rem; margin-left: 0.1rem;" src="{% static '/images/exclamation_mark2.png' %}"></p></span>
+                                                <span>最低{{ programInfo.minPay }}元起</span>
+                                                
+                                                    <span>出借无上限</span>
+                                                
+                                            </div>
+                                        
+                                    
+                                </div>
+                                <div class="n-btn">
+                                    <a href="/programDetails/{{ programInfo.id }}">
+                                        <big>马上加入</big>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+      </div>
+
+      {% empty %}
+       <div class="swiper-slide n-pro-list ">暂时还没有项目发布哦</div>
+      {% endfor %}
+
+
+
+
+
+      <div class="swiper-slide n-pro-list ">Slide 2</div>
+      <div class="swiper-slide n-pro-list">Slide 3</div>
+      <div class="swiper-slide n-pro-list">Slide 4</div>
+      <div class="swiper-slide n-pro-list">Slide 5</div>
+      <div class="swiper-slide n-pro-list">Slide 6</div>
+      <div class="swiper-slide n-pro-list">Slide 7</div>
+      <div class="swiper-slide n-pro-list">Slide 8</div>
+      <div class="swiper-slide n-pro-list">Slide 9</div>
+      <div class="swiper-slide n-pro-list">Slide 10</div>
+
+    </div>
+  
+    <div class="swiper-pagination"></div>
+
+    
+  </div>
+
+
+	
+
+        <script type="text/javascript">
+            var mySwiper1 = new Swiper ('.swiper-container', {
+                autoplay: 2800,
+                loop: true
+              });
+
+        </script>
+
+-->
+
+
+
+{% include 'includeBase.html' %}
+{% endblock %}
+
+
+

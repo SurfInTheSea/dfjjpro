@@ -1,0 +1,150 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="shortcut icon" href="{%static '/favicon.ico' %}" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0" />
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">
+	<title>您当前的产品</title>
+	<link rel="stylesheet" type="text/css" href="https://m.wukonglicai.com/css/global.css" />
+	<link rel="stylesheet" type="text/css" href="https://m.wukonglicai.com/css/set-account.css" />
+	<script type="text/javascript" src="https://m.wukonglicai.com/javascript/deposit/upgrade.js"></script>
+	<script type="text/javascript" src="https://m.wukonglicai.com/javascript/growingSDK.js"></script>
+	<script type="text/javascript" src="https://m.wukonglicai.com/javascript/rem.js"></script>
+	<script type="text/javascript" src="https://m.wukonglicai.com/javascript/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="https://m.wukonglicai.com/javascript/deposit/alertMessage.js"></script>
+	<script type="text/javascript" src="https://m.wukonglicai.com/javascript/deposit/layer/layer.js"></script>
+	<link rel="stylesheet" href="https://m.wukonglicai.com/css/zhezhao.css?20181013">
+	<link rel="stylesheet" href="https://m.wukonglicai.com/css/base.css" />
+
+
+
+	  <link rel="stylesheet" type="text/css" href="https://m.wukonglicai.com/extra/integral/css/nav.css"/>
+</head>
+<body>
+	<div id="wrap">
+					
+					<div id="container">
+					<div class="m-setact-content">
+					<div class="m-act-name">
+					<div class="m-main">
+					<a href="https://m.wukonglicai.com/weixin/jf/integral.html">
+					<dl>
+					<dt><img src="https://m.wukonglicai.com/img/user-tx.png" alt=""></dt>
+					<dd>
+					<p class="n-username">当前给您产生利润的产品<small></small></p>
+					<!-- 
+						<p class="n-vip-level"><span>Lv0普通会员</span></p>
+					-->
+					</dd>
+					</dl>
+					</a>
+					</div>
+					<!--
+						<span class="n-right-jt"><em><img src="https://m.wukonglicai.com/img/ico-right-sj.svg" alt=""></em></span>
+					 -->
+					</div>
+
+			{% for personalProgramDetail in personalProgramDetails %}
+			<!-- 
+			<ul>
+               <li> <span>项目名称：{{personalProgramDetail.program_name}}, </span></li>
+                <li> <span>最低购买值：{{personalProgramDetail.program_minPay}}, </span></li>
+                <li><p> 利率（%）：{{personalProgramDetail.program_payBack}}, </p></li>
+                <li><p> 您购入的数量：{{personalProgramDetail.program_count}}, </p></li>
+                <li><p> 产品周期（天）：{{personalProgramDetail.payDay}}, </p></li>
+                <li> <p>您购入的时间：{{personalProgramDetail.c_time}}, </p></li>
+               <li> <p> 您获得利润的时间：{{personalProgramDetail.out_time}}</p></li>
+
+			</ul>
+			-->
+			<ul class="m-act-info">
+						<!-- 
+							{'programDetail':programDetail,'personalInfo':personalInfo}
+						-->
+						<li >
+							<span class="n-dt">项目名称：</span><span class="n-dd" name='name'  style="font-weight:bold;">{{personalProgramDetail.program_name}}</span>
+						</li>
+
+						<li>
+							<span class="n-dt">最低购买值：</span><span class="n-dd" name='money'>{{personalProgramDetail.program_minPay}}</span>
+						</li>
+
+						<li>
+							<span class="n-dt">利率（%）：</span><span class="n-dd" name='bank_details'>{{personalProgramDetail.program_payBack}}</span>
+						</li>
+
+						<li>
+							<span class="n-dt">您购入的数量：</span><span class="n-dd" name='bank_acount'>{{personalProgramDetail.program_count}}</span>
+						</li>
+
+						<li>
+							<span class="n-dt">产品周期（天）</span><span class="n-dd" name='program_name'>{{personalProgramDetail.payDay}}</span>
+						</li>
+						<li>
+							<span class="n-dt">您购入的时间：</span><span class="n-dd" name='program_minPay'>{{personalProgramDetail.c_time}}</span>
+						</li>
+						<li>
+							<span class="n-dt">您获得利润的时间：</span><span class="n-dd" name='program_payBack'>{{personalProgramDetail.out_time}}</span>
+						</li>
+						
+						
+			</ul>
+			{% empty %}
+			<ul class="m-act-info">
+                  <li ><span class="n-dt">您暂时没有购买的项目</span></li>
+                  
+                  </ul>
+            {% endfor %}
+
+
+		
+</div>
+	</div>
+</div>
+	
+
+
+<div style="" id="show" class="fixed">
+    <a href="/" class="t-jTxt">
+        <dl>
+            <dt class="active-foot active-tj">
+            <img src="https://m.wukonglicai.com/images/s-yActive.png">
+            </dt>
+            <dd><p>首页 </p></dd>
+        </dl>
+    </a>
+    <a href="/maintz" class="l-cTxt">
+        <dl>
+            <dt class="xiabianlanlc">
+            <img src="https://m.wukonglicai.com/images/t-z.png">
+            </dt>
+            <dd><p>投资</p></dd>
+        </dl>
+    </a>
+    <a href="/logout" class="t-qTxt">
+        <dl>
+            <dt class="xiabianlantq">
+            <img src="https://m.wukonglicai.com/images/k-f.png">
+            </dt>
+            <dd><p>退出</p></dd>
+        </dl>
+    </a>
+    <a href="/userCenter" class="myTxt">
+        <dl>
+            <dt class="xiabianlanwd">
+            <img src="https://m.wukonglicai.com/images/m-y.png">
+            </dt>
+            <dd><p>我的</p></dd>
+        </dl>
+    </a>
+</div>
+
+<div style="width: 100%;height: 10%"></div>
+</body>

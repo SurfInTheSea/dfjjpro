@@ -1,0 +1,607 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"lo",
+				"loginView"
+			],
+			[
+				"pad",
+				"padding\tproperty"
+			],
+			[
+				"mar",
+				"margin-top\tproperty"
+			],
+			[
+				"bor",
+				"border-top\tproperty"
+			],
+			[
+				"padi",
+				"padding-top\tproperty"
+			],
+			[
+				"tr",
+				"translateY()\ttransform"
+			],
+			[
+				"max",
+				"max-width\tproperty"
+			],
+			[
+				"fi",
+				"figure\tTag"
+			],
+			[
+				"disp",
+				"display-4"
+			],
+			[
+				"btn-",
+				"btn-sm"
+			],
+			[
+				"c",
+				"class\tAttr"
+			],
+			[
+				"container",
+				"container-fluid"
+			],
+			[
+				"contain",
+				"container-fluid"
+			],
+			[
+				"mb",
+				"mb-5"
+			],
+			[
+				"dis",
+				"display-2"
+			],
+			[
+				"syt",
+				"style"
+			],
+			[
+				"li",
+				"link\tTag"
+			],
+			[
+				"a",
+				"active"
+			],
+			[
+				"st",
+				"style\tTag"
+			],
+			[
+				"nav",
+				"navbar"
+			],
+			[
+				"na",
+				"navbar"
+			],
+			[
+				"bg-",
+				"bg-primary"
+			],
+			[
+				"bg-d",
+				"bg-dark"
+			],
+			[
+				"h",
+				"h1\tTag"
+			],
+			[
+				"le",
+				"label\tTag"
+			],
+			[
+				"form",
+				"form-group"
+			],
+			[
+				"whi",
+				"width\tproperty"
+			],
+			[
+				"text",
+				"text-white"
+			],
+			[
+				"tex",
+				"text-white"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"d",
+				"div\tTag"
+			],
+			[
+				"bg-s",
+				"bg-success"
+			],
+			[
+				"ml",
+				"ml-5"
+			],
+			[
+				"b",
+				"bg-primary"
+			],
+			[
+				"min",
+				"min-width\tproperty"
+			],
+			[
+				"u",
+				"uppercase\ttext-transform"
+			],
+			[
+				"te",
+				"text-transform\tproperty"
+			],
+			[
+				"re",
+				"render"
+			],
+			[
+				"cont",
+				"container"
+			],
+			[
+				"co",
+				"col-md-1"
+			],
+			[
+				"t",
+				"transition\tproperty"
+			],
+			[
+				"p",
+				"position\tproperty"
+			],
+			[
+				"import",
+				"important"
+			],
+			[
+				"col",
+				"color\tproperty"
+			],
+			[
+				"fo",
+				"font-family\tproperty"
+			],
+			[
+				"flex",
+				"flex-direction\tproperty"
+			],
+			[
+				"ba",
+				"background-color\tproperty"
+			],
+			[
+				"wid",
+				"width\tproperty"
+			],
+			[
+				"sta",
+				"static"
+			],
+			[
+				"he",
+				"header\tTag"
+			],
+			[
+				"font-",
+				"font-size\tproperty"
+			],
+			[
+				"s",
+				"sans-serif\tfont-family"
+			],
+			[
+				"box-s",
+				"box-sizing\tproperty"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "templates/base.html",
+			"settings":
+			{
+				"buffer_size": 1725,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/start.html",
+			"settings":
+			{
+				"buffer_size": 197,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "start.html"
+			}
+		},
+		{
+			"file": "templates/index/index.html",
+			"settings":
+			{
+				"buffer_size": 9691,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/login/login.html",
+			"settings":
+			{
+				"buffer_size": 1647,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "login.html"
+			}
+		},
+		{
+			"file": "index/views.py",
+			"settings":
+			{
+				"buffer_size": 19346,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Pack",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/alex/alexProgram/program/dfjjpro"
+	],
+	"file_history":
+	[
+		"/home/alex/.config/sublime-text-3/Packages/User/Git.sublime-settings",
+		"/home/alex/alexProgram/program/github-dfjjpro/dfjjpro/login/urls.py",
+		"/home/alex/alexProgram/program/github-dfjjpro/dfjjpro/login/views.py",
+		"/home/alex/alexProgram/alexToBootstrap/static/css/index/style.css",
+		"/home/alex/alexProgram/alexToBootstrap/templates/base.html",
+		"/home/alex/alexProgram/alexToBootstrap/templates/bootstrap/base.html",
+		"/home/alex/Downloads/Bootstrap 4 Site Files/Bootstrap 4 Site Files/index.html",
+		"/home/alex/alexProgram/alexToBootstrap/templates/pay/index.html",
+		"/home/alex/alexProgram/alexToBootstrap/templates/login/login.html",
+		"/home/alex/alexProgram/alexToBootstrap/templates/index/bootstrap.html",
+		"/home/alex/alexProgram/alexToBootstrap/index/urls.py",
+		"/home/alex/alexProgram/alexToBootstrap/templates/pay/start.html",
+		"/home/alex/alexProgram/alexToBootstrap/templates/index/index.html",
+		"/home/alex/alexProgram/alexToBootstrap/firstMeetToBoootstrap/settings.py",
+		"/home/alex/alexProgram/alexToBootstrap/firstMeetToBoootstrap/wsgi.py",
+		"/home/alex/alexProgram/alexToBootstrap/static/style.css",
+		"/home/alex/alexProgram/alexToBootstrap/login/urls.py",
+		"/home/alex/alexProgram/alexToBootstrap/firstMeetToBoootstrap/urls.py",
+		"/home/alex/alexProgram/alexToBootstrap/index/views.py",
+		"/home/alex/alexProgram/alexToBootstrap/pay/urls.py",
+		"/home/alex/alexProgram/alexToBootstrap/pay/views.py",
+		"/home/alex/alexProgram/alexToBootstrap/login/views.py"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "templates/base.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1725,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "templates/start.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 197,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_name": "start.html",
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "templates/index/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9691,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 663.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "templates/login/login.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1647,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								69,
+								69
+							]
+						],
+						"settings":
+						{
+							"auto_name": "login.html",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "index/views.py",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 19346,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 120.0
+	},
+	"pinned_build_system": "",
+	"project": "untitled.sublime-project",
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 389.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

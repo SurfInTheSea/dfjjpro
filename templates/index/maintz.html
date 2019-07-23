@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+
+{% block title %}
+大发基金|投资产品
+{% endblock %}
+
+
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/index/nav.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static '/css/index/maintz.css' %}">
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="container">
+	<div class="row">
+		<ul class="col-12">
+			
+			{% for programinfo in program_infos %}
+
+
+	            <li class="col-12 border m-2 p-2 rounded shadow">
+				<div class="col-12 text-center ">
+					<h3>{{ programinfo.name }}</h3>
+					<hr>
+				</div>
+				<p class="col-12 " style="width: 100%">
+					{{ programinfo.programText }}
+				</p>
+
+				<div class="col-12 d-flex  align-items-center border flex-row">
+					<p class="col-4  mr-2 lead">最低{{ programinfo.minPay }}元</p>
+					<p class="col-4  mr-2 lead">{{ programinfo.payDay }}天就收益</p>
+					<a class="col-4  mr-2" href="/programDetails/{{ programinfo.id }}"><button class="btn btn-md bg-primary">马上投资</button></a>
+				</div>
+			</li>
+
+
+	            {% empty %}
+                  <li class="col-12 border m-2 p-2 rounded shadow">
+					<h1>暂时没有发布理财产品</h1>
+				</li>
+                {% endfor %}
+			
+
+
+		</ul>
+	</div>
+</div>
+
+
+
+
+
+
+{% include 'includeBase.html' %}
+{% endblock %}
+
+
+
+{% block js %}
+
+{% endblock %}
