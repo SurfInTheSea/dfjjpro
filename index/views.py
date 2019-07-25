@@ -200,6 +200,7 @@ def newguide(request):
 
             if UserInfo.IsUserHaveFakeMoney:
                 UserInfo.FakeMoney = UserInfo.FakeMoney + 5000
+                UserInfo.money = + UserInfo.FakeMoney
                 UserInfo.IsUserHaveFakeMoney = False
                 UserInfo.save()
                 messages.success(request, "提交成功;用户名=" + name + ";虚拟账户=" + str(UserInfo.FakeMoney) + "")
@@ -290,8 +291,8 @@ def buyProgramDetails(request, pk):
         # *"+ OperatingOne.program_count +"="+ OperatingOne.program_minPay * OperatingOne.program_minPay +"
         messages.success(request,
                          "恭喜您，成功购入" + OperatingOne.program_name + "，总计:" + str(OperatingOne.program_minPay) + "*" + str(
-                             OperatingOne.program_count) + "=" + str(
-                             OperatingOne.program_minPay * OperatingOne.program_count) + "元")
+                             OperatingOne.program_count) + "="
+                         + str(OperatingOne.program_minPay * OperatingOne.program_count) + "元")
         return redirect("/index/")
 
     programDetail = models.ProgramInfo.objects.get(id=pk)
