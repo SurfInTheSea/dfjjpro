@@ -202,7 +202,7 @@ def newguide(request):
                 UserInfo.FakeMoney = UserInfo.FakeMoney + 5000
                 UserInfo.IsUserHaveFakeMoney = False
                 UserInfo.save()
-                messages.success(request, "POST:提交成功;用户名=" + name + ";虚拟账户=" + str(UserInfo.FakeMoney) + "")
+                messages.success(request, "提交成功;用户名=" + name + ";虚拟账户=" + str(UserInfo.FakeMoney) + "")
             else:
                 messages.success(request, "该活动只能参与一次哦")
         return render(request, 'index/newguide.html')
