@@ -11,6 +11,8 @@ class User(models.Model):
     bank_details = models.CharField('开户行', max_length=256, default='')
     bank_acount = models.CharField('卡号', max_length=256, default='')
     pay_name = models.CharField('利息账户', max_length=128, default='')
+    FakeMoney = models.FloatField('赠送金额（无法提现）', default=0)
+    IsUserHaveFakeMoney = models.BooleanField('有无彩金', default=True)
 
     def __str__(self):
         return self.name
@@ -62,14 +64,14 @@ class OperatingInfo(models.Model):
         ordering = ['c_time']
         verbose_name = '变更记录'
         verbose_name_plural = '变更记录'
-
-
-class activityInfo(models.Model):
+'''
+class ActivityInfo(models.Model):
     name = models.CharField('活动名称', max_length=128, unique=True, null=True, blank=True)
     activityText = models.TextField('活动简介', null=True, blank=True)
     activityMoney = models.FloatField('活动金额', default=0, null=True, blank=True)
-    activityStayTime = models.IntegerField('持续时间', null=True, blank=True)
     c_time = models.DateTimeField('发布时间', auto_now=True, null=True, blank=True)
+    ActivityEndTime = models.DateTimeField('活动结束时间', auto_now=True, null=True, blank=True)
+    ActivityMinMoney = models.IntegerField('最小购入金额', default=0, null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -78,4 +80,6 @@ class activityInfo(models.Model):
         ordering = ['c_time']
         verbose_name = '活动简介'
         verbose_name_plural = '活动简介'
+
+'''
 

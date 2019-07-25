@@ -189,6 +189,26 @@ def base(request):
 
 
 def newguide(request):
+    if not request.session.get('is_login', None):
+        messages.success(request, "请先登录，5000新人红包在等您哦～～")
+        return redirect("/login/")
+    if request.method == "POST":
+        name = request.session['user_name']
+        # messages.success(request, "POST:提交成功;用户名" + name + "")
+        if name is not None:
+            UserInfo = models.User.objects.get(name=name)
+
+            if UserInfo.IsUserHaveFakeMoney:
+                UserInfo.FakeMoney = UserInfo.FakeMoney + 5000
+                UserInfo.IsUserHaveFakeMoney = False
+                UserInfo.save()
+                messages.success(request, "POST:提交成功;用户名=" + name + ";虚拟账户=" + str(UserInfo.FakeMoney) + "")
+            else:
+                messages.success(request, "该活动只能参与一次哦")
+        return render(request, 'index/newguide.html')
+
+
+
     return render(request, 'index/newguide.html')
 
 
@@ -292,6 +312,8 @@ def userCenter(request):
     if not request.session.get('is_login', None):
         return redirect("/login/")
     user = models.User.objects.filter(name=request.session['user_name']).get()
+    FakeMoney = user.FakeMoney
+    print(FakeMoney)
     now = datetime.datetime.now()
     OperatingOnes = models.OperatingInfo.objects.filter(name=request.session['user_name'], out_time__gt=now)
     payToday = 0
@@ -307,8 +329,11 @@ def userCenter(request):
     moneyTotall += user.money
     moneyNow = user.money
     print(moneyTotall)
+
     return render(request, 'index/userCenter.html',
-                  {'payToday': round(payToday, 2), 'moneyTotall': moneyTotall, 'moneyNow': moneyNow})
+                  {'payToday': round(payToday, 2),
+                   'moneyTotall': moneyTotall,
+                   'moneyNow': moneyNow, 'FakeMoney': FakeMoney})
 
 
 '''
@@ -351,7 +376,8 @@ def banckAndaccount(request):
                                                                           bank_details=bank_details,
                                                                           bank_acount=bank_acount, pay_name=pay_name)
             # user = models.User.objects.get(name=request.session['user_name'])
-            # user.objects.filter(id=user.id).update(realName=realName, bank=bank, bank_details=bank_details, bank_acount=bank_acount, pay_name=pay_name)
+            # user.objects.filter(id=user.id).update(
+            # realName=realName, bank=bank, bank_details=bank_details, bank_acount=bank_acount, pay_name=pay_name)
             messages.success(request, "改动成功")
             return redirect("/userCenter/")
 
@@ -376,7 +402,6 @@ def personalProgramDetails(request):
     # print(request.session['user_name'])
     start = now().date()
     end = start + timedelta(days=1)
-    # personalProgramDetails = models.OperatingInfo.objects.all().filter(name=request.session['user_name'], out_time__gt=now)
     # personalProgramDetails = models.OperatingInfo.objects.all().filter(out_time__range=(start, end))
     personalProgramDetails = models.OperatingInfo.objects.all().filter(name=request.session['user_name'],
                                                                        out_time__gt=start)

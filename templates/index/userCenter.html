@@ -88,7 +88,7 @@
 
 		{% if request.session.is_login %}
 		
-					<div id="wrap">
+				<div id="wrap">
 				<div id="container">
 				<div class="m-mact-infobox">
 				<div class="m-header">
@@ -117,7 +117,8 @@
 				</div>
 				<div class="m-mact-total">
 				
-					<div class="n-total" onclick="toTotalAssets('yesterdayEarnings')">
+					<!--
+						<div class="n-total" onclick="toTotalAssets('yesterdayEarnings')">
 						<p class="n-t">总资产</p>
 						<p class="n-m">
 						{% if moneyTotall %}
@@ -128,7 +129,34 @@
 
 						</p>
 					</div>
-				
+					-->
+				<div class="n-income">
+				<dl id="yestodayBenefitDl" onclick="toTotalAssets('totalAssets')">
+				<dt>您的资金(元):</dt>
+
+					{% if request.session.is_login %}
+						<dd id="currentTotalMoney">{{ moneyTotall }}</dd>
+					{% else %}
+						<dd id="currentTotalMoney">--</dd>
+					{% endif %}
+
+
+				</dl>
+				<dl onclick="toTotalAssets('accumulatedIncome')">
+				<dt>平台活动赠送资金<img name="showExplainImg" onclick="showExplain(10)" style="width: 0.3rem; margin-left: 0.1rem;" src="{% static '/userCenter/exclamation_mark2.png' %}"></dt>
+				{% if FakeMoney %}
+				<dd id="accumulatedIncome">{{ FakeMoney }}</dd>
+				{% else %}
+				<dd id="accumulatedIncome">--</dd>
+				{% endif %}
+
+				</dl>
+				</div>
+
+
+
+
+
 				<div class="n-income">
 				<dl id="yestodayBenefitDl" onclick="toTotalAssets('totalAssets')">
 				<dt>活动资金(元):</dt>
@@ -151,6 +179,8 @@
 
 				</dl>
 				</div>
+
+
 				</div>
 				</div>
 				
