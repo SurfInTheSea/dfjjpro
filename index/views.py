@@ -6,20 +6,24 @@ from django.contrib import messages
 import datetime
 
 from django.utils.timezone import now, timedelta
-#from django.utils import timezone
-#from time import datetime
- 
-def hash_code(s, salt='python-django-hash-0451392aa##'): # 加点盐
+
+
+# from django.utils import timezone
+# from time import datetime
+
+def hash_code(s, salt='python-django-hash-0451392aa##'):  # 加点盐
     h = hashlib.sha256()
     s += salt
     h.update(s.encode())  # update方法只接收bytes类型
     return h.hexdigest()
- 
+
+
 def index(request):
     programInfos = models.ProgramInfo.objects.all()
-    return render(request, 'index/index.html', {'programInfos':programInfos})
-	#return render(request, 'DFJJ/index.html',  {'programInfos':programInfos} )
+    return render(request, 'index/index.html', {'programInfos': programInfos})
 
+
+# return render(request, 'DFJJ/index.html',  {'programInfos':programInfos} )
 
 
 def login(request):
@@ -44,11 +48,11 @@ def login(request):
             except:
                 message = "用户不存在！"
         return render(request, 'login/login.html', locals())
- 
+
     login_form = UserForm()
     return render(request, 'login/login.html', locals())
 
- 
+
 def register(request):
     if request.session.get('is_login', None):
         # 登录状态不允许注册。你可以修改这条原则！
@@ -68,10 +72,9 @@ def register(request):
                 if same_name_user:  # 用户名唯一
                     message = '用户已经存在，请重新选择用户名！'
                     return render(request, 'login/register.html', locals())
-                
- 
+
                 # 当一切都OK的情况下，创建新用户
- 
+
                 new_user = models.User.objects.create()
                 new_user.name = username
                 new_user.password = hash_code(password1)  # 使用加密密码
@@ -79,7 +82,8 @@ def register(request):
                 return redirect('/login/')  # 自动跳转到登录页面
     register_form = RegisterForm()
     return render(request, 'login/register.html', locals())
- 
+
+
 def logout(request):
     if not request.session.get('is_login', None):
         # 如果本来就未登录，也就没有登出一说
@@ -92,60 +96,128 @@ def logout(request):
     return redirect("/index/")
 
 
-
-
 def indexText(request):
-	return render(request, 'index/index-self.html', context={
-		"loginState":"F",
-		"index":0,
-		"code":"000",
-		"productInfoVo":
-			[
-				{"baseYields":"6.0", "yields":"6.0","timeLong":"90","minInvest":100.00,"maxInvest":90000000.00,"restAmount":"273858.83","startTime":"null","endTime":"null","productCode":"Q3-190117150904512","totalAmount":"null","productName":"季账户-3个月","createTime":"null","url":"null","productPackageCode":"190117150904512-778","productType":"Q3","extraProfit":"F","isShowGreen":"null","upProfit":"","maxProfit":"6.0","isShowActivityInfo":"F","activityInfo":"","extraInfo":"","isShowextraInfo":"F","isShow":"T","startDateAPP":"null","startTimeAPP":"null","recommendCount":"null","longtimeMarkFlag":"null","longtimeMarkContent":"null","yieldMarkFlag":"null","yieldMarkContent":"null","assistMsg":"","accountSign":"null","investCount":"null","productSubType":"null","isDepository":"1","accountType":"null","isSellout":"F","buttonDesc":"null","reamarks":"","fbProductType":"0","mdesc":"null","isUser":"F","hdesc":"null"},
-				{"baseYields":"9.4", "yields":"9.4","timeLong":"365","minInvest":1000.00,"maxInvest":2000000.00,"restAmount":"1148905.43","startTime":"null","endTime":"null","productCode":"T365-190628112609101","totalAmount":"null","productName":"限时特供365天","createTime":"null","url":"null","productPackageCode":"190628112609101-2","productType":"T","extraProfit":"F","isShowGreen":"null","upProfit":"","maxProfit":"","isShowActivityInfo":"F","activityInfo":"","extraInfo":"","isShowextraInfo":"F","isShow":"T","startDateAPP":"null","startTimeAPP":"null","recommendCount":"null","longtimeMarkFlag":"null","longtimeMarkContent":"null","yieldMarkFlag":"null","yieldMarkContent":"null","assistMsg":"","accountSign":"null","investCount":"null","productSubType":"null","isDepository":"1","accountType":"null","isSellout":"F","buttonDesc":"null","reamarks":"","fbProductType":"0","mdesc":"null","isUser":"F","hdesc":"null"},
-				{"baseYields":"4.5", "yields":"4.5","timeLong":"1","minInvest":100.00,"maxInvest":50000.00,"restAmount":"112801.96","startTime":"null","endTime":"null","productCode":"M190117151824811","totalAmount":"null","productName":"月账户","createTime":"null","url":"null","productPackageCode":"190117151824811-772","productType":"M","extraProfit":"F","isShowGreen":"F","upProfit":"0.5","maxProfit":"8.5","isShowActivityInfo":"F","activityInfo":"","extraInfo":"","isShowextraInfo":"F","isShow":"T","startDateAPP":"null","startTimeAPP":"null","recommendCount":"null","longtimeMarkFlag":"null","longtimeMarkContent":"null","yieldMarkFlag":"null","yieldMarkContent":"null","assistMsg":"","accountSign":"null","investCount":"null","productSubType":"null","isDepository":"1","accountType":"null","isSellout":"F","buttonDesc":"null","reamarks":"","fbProductType":"0","mdesc":"4%起，逐月涨0.5%，30天后每月可申请转让1次","isUser":"F","hdesc":"null"},
-				{"baseYields":"12.0","yields":"12.0","timeLong":"21","minInvest":100.00,"maxInvest":30000.00,"restAmount":"352577.02","startTime":"null","endTime":"null","productCode":"T21-FB190117151528287","totalAmount":"null","productName":"新手专享21天","createTime":"null","url":"null","productPackageCode":"190117151528287-376","productType":"T","extraProfit":"F","isShowGreen":"null","upProfit":"","maxProfit":"","isShowActivityInfo":"F","activityInfo":"","extraInfo":"","isShowextraInfo":"F","isShow":"T","startDateAPP":"null","startTimeAPP":"null","recommendCount":"null","longtimeMarkFlag":"null","longtimeMarkContent":"null","yieldMarkFlag":"null","yieldMarkContent":"null","assistMsg":"","accountSign":"null","investCount":"null","productSubType":"null","isDepository":"1","accountType":"null","isSellout":"F","buttonDesc":"null","reamarks":"新用户出借一次</br>上限3万元","fbProductType":"N21","mdesc":"null","isUser":"F","hdesc":"null"},
-				{"baseYields":"8.0","yields":"8.0","timeLong":"90","minInvest":100.00,"maxInvest":20000.00,"restAmount":"205827.72","startTime":"null","endTime":"null","productCode":"T90-FB190117151749370","totalAmount":"null","productName":"新手专享90天","createTime":"null","url":"null","productPackageCode":"190117151749370-364","productType":"T","extraProfit":"F","isShowGreen":"null","upProfit":"","maxProfit":"","isShowActivityInfo":"F","activityInfo":"","extraInfo":"","isShowextraInfo":"F","isShow":"T","startDateAPP":"null","startTimeAPP":"null","recommendCount":"null","longtimeMarkFlag":"null","longtimeMarkContent":"null","yieldMarkFlag":"null","yieldMarkContent":"null","assistMsg":"","accountSign":"null","investCount":"null","productSubType":"null","isDepository":"1","accountType":"null","isSellout":"F","buttonDesc":"null","reamarks":"出借1万元</br>期望回报197.26元","fbProductType":"N90","mdesc":"null","isUser":"F","hdesc":"null"},
-				{"baseYields":"10.0","yields":"10.0","timeLong":"365","minInvest":100.00,"maxInvest":10000.00,"restAmount":"616239.82","startTime":"null","endTime":"null","productCode":"T365-FB190117151640326","totalAmount":"null","productName":"新手专享365天","createTime":"null","url":"null","productPackageCode":"190117151640326-209","productType":"T","extraProfit":"F","isShowGreen":"null","upProfit":"","maxProfit":"","isShowActivityInfo":"F","activityInfo":"","extraInfo":"","isShowextraInfo":"F","isShow":"T","startDateAPP":"null","startTimeAPP":"null","recommendCount":"null","longtimeMarkFlag":"null","longtimeMarkContent":"null","yieldMarkFlag":"null","yieldMarkContent":"null","assistMsg":"","accountSign":"null","investCount":"null","productSubType":"null","isDepository":"1","accountType":"null","isSellout":"F","buttonDesc":"null","reamarks":"出借1万元</br>期望回报1000.0元","fbProductType":"N365","mdesc":"null","isUser":"F","hdesc":"null"},
-				{"baseYields":"8.5","yields":"8.5","timeLong":"365","minInvest":100.00,"maxInvest":99999999.99,"restAmount":"1126239.98","startTime":"null","endTime":"null","productCode":"Y12-190221144847577","totalAmount":"null","productName":"年账户-1年","createTime":"null","url":"null","productPackageCode":"190221144847577-627","productType":"Y","extraProfit":"F","isShowGreen":"null","upProfit":"","maxProfit":"8.5","isShowActivityInfo":"F","activityInfo":"","extraInfo":"","isShowextraInfo":"F","isShow":"T","startDateAPP":"null","startTimeAPP":"null","recommendCount":"null","longtimeMarkFlag":"null","longtimeMarkContent":"null","yieldMarkFlag":"null","yieldMarkContent":"null","assistMsg":"","accountSign":"null","investCount":"null","productSubType":"null","isDepository":"1","accountType":"null","isSellout":"F","buttonDesc":"null","reamarks":"","fbProductType":"0","mdesc":"null","isUser":"F","hdesc":"null"}
-			]
-        })
+    return render(request, 'index/index-self.html', context={
+        "loginState": "F",
+        "index": 0,
+        "code": "000",
+        "productInfoVo":
+            [
+                {"baseYields": "6.0", "yields": "6.0", "timeLong": "90", "minInvest": 100.00, "maxInvest": 90000000.00,
+                 "restAmount": "273858.83", "startTime": "null", "endTime": "null", "productCode": "Q3-190117150904512",
+                 "totalAmount": "null", "productName": "季账户-3个月", "createTime": "null", "url": "null",
+                 "productPackageCode": "190117150904512-778", "productType": "Q3", "extraProfit": "F",
+                 "isShowGreen": "null", "upProfit": "", "maxProfit": "6.0", "isShowActivityInfo": "F",
+                 "activityInfo": "", "extraInfo": "", "isShowextraInfo": "F", "isShow": "T", "startDateAPP": "null",
+                 "startTimeAPP": "null", "recommendCount": "null", "longtimeMarkFlag": "null",
+                 "longtimeMarkContent": "null", "yieldMarkFlag": "null", "yieldMarkContent": "null", "assistMsg": "",
+                 "accountSign": "null", "investCount": "null", "productSubType": "null", "isDepository": "1",
+                 "accountType": "null", "isSellout": "F", "buttonDesc": "null", "reamarks": "", "fbProductType": "0",
+                 "mdesc": "null", "isUser": "F", "hdesc": "null"},
+                {"baseYields": "9.4", "yields": "9.4", "timeLong": "365", "minInvest": 1000.00, "maxInvest": 2000000.00,
+                 "restAmount": "1148905.43", "startTime": "null", "endTime": "null",
+                 "productCode": "T365-190628112609101", "totalAmount": "null", "productName": "限时特供365天",
+                 "createTime": "null", "url": "null", "productPackageCode": "190628112609101-2", "productType": "T",
+                 "extraProfit": "F", "isShowGreen": "null", "upProfit": "", "maxProfit": "", "isShowActivityInfo": "F",
+                 "activityInfo": "", "extraInfo": "", "isShowextraInfo": "F", "isShow": "T", "startDateAPP": "null",
+                 "startTimeAPP": "null", "recommendCount": "null", "longtimeMarkFlag": "null",
+                 "longtimeMarkContent": "null", "yieldMarkFlag": "null", "yieldMarkContent": "null", "assistMsg": "",
+                 "accountSign": "null", "investCount": "null", "productSubType": "null", "isDepository": "1",
+                 "accountType": "null", "isSellout": "F", "buttonDesc": "null", "reamarks": "", "fbProductType": "0",
+                 "mdesc": "null", "isUser": "F", "hdesc": "null"},
+                {"baseYields": "4.5", "yields": "4.5", "timeLong": "1", "minInvest": 100.00, "maxInvest": 50000.00,
+                 "restAmount": "112801.96", "startTime": "null", "endTime": "null", "productCode": "M190117151824811",
+                 "totalAmount": "null", "productName": "月账户", "createTime": "null", "url": "null",
+                 "productPackageCode": "190117151824811-772", "productType": "M", "extraProfit": "F",
+                 "isShowGreen": "F", "upProfit": "0.5", "maxProfit": "8.5", "isShowActivityInfo": "F",
+                 "activityInfo": "", "extraInfo": "", "isShowextraInfo": "F", "isShow": "T", "startDateAPP": "null",
+                 "startTimeAPP": "null", "recommendCount": "null", "longtimeMarkFlag": "null",
+                 "longtimeMarkContent": "null", "yieldMarkFlag": "null", "yieldMarkContent": "null", "assistMsg": "",
+                 "accountSign": "null", "investCount": "null", "productSubType": "null", "isDepository": "1",
+                 "accountType": "null", "isSellout": "F", "buttonDesc": "null", "reamarks": "", "fbProductType": "0",
+                 "mdesc": "4%起，逐月涨0.5%，30天后每月可申请转让1次", "isUser": "F", "hdesc": "null"},
+                {"baseYields": "12.0", "yields": "12.0", "timeLong": "21", "minInvest": 100.00, "maxInvest": 30000.00,
+                 "restAmount": "352577.02", "startTime": "null", "endTime": "null",
+                 "productCode": "T21-FB190117151528287", "totalAmount": "null", "productName": "新手专享21天",
+                 "createTime": "null", "url": "null", "productPackageCode": "190117151528287-376", "productType": "T",
+                 "extraProfit": "F", "isShowGreen": "null", "upProfit": "", "maxProfit": "", "isShowActivityInfo": "F",
+                 "activityInfo": "", "extraInfo": "", "isShowextraInfo": "F", "isShow": "T", "startDateAPP": "null",
+                 "startTimeAPP": "null", "recommendCount": "null", "longtimeMarkFlag": "null",
+                 "longtimeMarkContent": "null", "yieldMarkFlag": "null", "yieldMarkContent": "null", "assistMsg": "",
+                 "accountSign": "null", "investCount": "null", "productSubType": "null", "isDepository": "1",
+                 "accountType": "null", "isSellout": "F", "buttonDesc": "null", "reamarks": "新用户出借一次</br>上限3万元",
+                 "fbProductType": "N21", "mdesc": "null", "isUser": "F", "hdesc": "null"},
+                {"baseYields": "8.0", "yields": "8.0", "timeLong": "90", "minInvest": 100.00, "maxInvest": 20000.00,
+                 "restAmount": "205827.72", "startTime": "null", "endTime": "null",
+                 "productCode": "T90-FB190117151749370", "totalAmount": "null", "productName": "新手专享90天",
+                 "createTime": "null", "url": "null", "productPackageCode": "190117151749370-364", "productType": "T",
+                 "extraProfit": "F", "isShowGreen": "null", "upProfit": "", "maxProfit": "", "isShowActivityInfo": "F",
+                 "activityInfo": "", "extraInfo": "", "isShowextraInfo": "F", "isShow": "T", "startDateAPP": "null",
+                 "startTimeAPP": "null", "recommendCount": "null", "longtimeMarkFlag": "null",
+                 "longtimeMarkContent": "null", "yieldMarkFlag": "null", "yieldMarkContent": "null", "assistMsg": "",
+                 "accountSign": "null", "investCount": "null", "productSubType": "null", "isDepository": "1",
+                 "accountType": "null", "isSellout": "F", "buttonDesc": "null", "reamarks": "出借1万元</br>期望回报197.26元",
+                 "fbProductType": "N90", "mdesc": "null", "isUser": "F", "hdesc": "null"},
+                {"baseYields": "10.0", "yields": "10.0", "timeLong": "365", "minInvest": 100.00, "maxInvest": 10000.00,
+                 "restAmount": "616239.82", "startTime": "null", "endTime": "null",
+                 "productCode": "T365-FB190117151640326", "totalAmount": "null", "productName": "新手专享365天",
+                 "createTime": "null", "url": "null", "productPackageCode": "190117151640326-209", "productType": "T",
+                 "extraProfit": "F", "isShowGreen": "null", "upProfit": "", "maxProfit": "", "isShowActivityInfo": "F",
+                 "activityInfo": "", "extraInfo": "", "isShowextraInfo": "F", "isShow": "T", "startDateAPP": "null",
+                 "startTimeAPP": "null", "recommendCount": "null", "longtimeMarkFlag": "null",
+                 "longtimeMarkContent": "null", "yieldMarkFlag": "null", "yieldMarkContent": "null", "assistMsg": "",
+                 "accountSign": "null", "investCount": "null", "productSubType": "null", "isDepository": "1",
+                 "accountType": "null", "isSellout": "F", "buttonDesc": "null", "reamarks": "出借1万元</br>期望回报1000.0元",
+                 "fbProductType": "N365", "mdesc": "null", "isUser": "F", "hdesc": "null"},
+                {"baseYields": "8.5", "yields": "8.5", "timeLong": "365", "minInvest": 100.00, "maxInvest": 99999999.99,
+                 "restAmount": "1126239.98", "startTime": "null", "endTime": "null",
+                 "productCode": "Y12-190221144847577", "totalAmount": "null", "productName": "年账户-1年",
+                 "createTime": "null", "url": "null", "productPackageCode": "190221144847577-627", "productType": "Y",
+                 "extraProfit": "F", "isShowGreen": "null", "upProfit": "", "maxProfit": "8.5",
+                 "isShowActivityInfo": "F", "activityInfo": "", "extraInfo": "", "isShowextraInfo": "F", "isShow": "T",
+                 "startDateAPP": "null", "startTimeAPP": "null", "recommendCount": "null", "longtimeMarkFlag": "null",
+                 "longtimeMarkContent": "null", "yieldMarkFlag": "null", "yieldMarkContent": "null", "assistMsg": "",
+                 "accountSign": "null", "investCount": "null", "productSubType": "null", "isDepository": "1",
+                 "accountType": "null", "isSellout": "F", "buttonDesc": "null", "reamarks": "", "fbProductType": "0",
+                 "mdesc": "null", "isUser": "F", "hdesc": "null"}
+            ]
+    })
+
 
 def base(request):
     return render(request, 'base.html')
 
+
 def newguide(request):
-	return render(request, 'index/newguide.html')
+    return render(request, 'index/newguide.html')
+
 
 def trust(request):
-	return render(request, 'index/trust.html')
+    return render(request, 'index/trust.html')
+
 
 def infomation(request):
-	return render(request, 'index/infomation.html')
+    return render(request, 'index/infomation.html')
 
 
-#项目名称(name)---项目简介(programText)---最小买入值(minPay)---利率(payBack)---周期（天）(payDay)
+# 项目名称(name)---项目简介(programText)---最小买入值(minPay)---利率(payBack)---周期（天）(payDay)
 def maintz(request):
-    #models.ProgramInfo.objects.all()
-    #print(models.ProgramInfo.objects.all())
+    # models.ProgramInfo.objects.all()
+    # print(models.ProgramInfo.objects.all())
     program_infos = models.ProgramInfo.objects.all()
-    
 
     print(program_infos)
 
+    # {'program_infos': user_list}
 
-    #{'program_infos': user_list}
-
-    
     return render(request, 'index/maintz.html', {'program_infos': program_infos})
 
 
 def programDetails(request, pk):
-    
     programDetail = models.ProgramInfo.objects.get(id=pk)
-    #print(pk)
+    # print(pk)
     print(programDetail)
-    return render(request, 'index/programDetails.html', {'programDetail':programDetail})
+    return render(request, 'index/programDetails.html', {'programDetail': programDetail})
 
 
 def buyProgramDetails(request, pk):
@@ -153,22 +225,18 @@ def buyProgramDetails(request, pk):
         return redirect("/login/")
 
     if request.method == "POST":
-        programDetail = models.ProgramInfo.objects.get(id=pk)  
+        programDetail = models.ProgramInfo.objects.get(id=pk)
         personalInfo = models.User.objects.get(name=request.session['user_name'])
 
-
-
-
         program_count = request.POST.get('program_count', None)
-        try:     
-            f = float(program_count) 
+        try:
+            f = float(program_count)
         except ValueError:
             print('输入不是数字')
             messages.success(request, "请正确填写您需要购入的数量！")
             return redirect("/index/")
-        #print(programDetail, personalInfo, program_count)
+        # print(programDetail, personalInfo, program_count)
 
-        
         OperatingOne = models.OperatingInfo.objects.create()
         OperatingOne.name = personalInfo.name
         OperatingOne.money = personalInfo.money
@@ -178,39 +246,47 @@ def buyProgramDetails(request, pk):
         OperatingOne.program_minPay = programDetail.minPay
         OperatingOne.program_payBack = programDetail.payBack
         OperatingOne.program_count = program_count
-        #OperatingOne.payDay = programDetail.payDay
+        # OperatingOne.payDay = programDetail.payDay
         if personalInfo.money < (float(programDetail.minPay) * float(program_count)):
             print('余额不足！')
-            messages.success(request,"余额不足！请及时到充值渠道充值哦")
+            messages.success(request, "余额不足！请及时到充值渠道充值哦")
             return redirect("/index/")
         OperatingOne.mone_done = personalInfo.money - float(programDetail.minPay) * float(program_count)
         OperatingOne.payMoney = round((float(programDetail.minPay) * float(program_count)), 2)
         now = datetime.datetime.now()
         OperatingOne.out_time = now + datetime.timedelta(days=programDetail.payDay)
-        print(OperatingOne.name, OperatingOne.money, OperatingOne.pay_name, OperatingOne.program_name,
-            OperatingOne.program_minPay, OperatingOne.program_payBack, OperatingOne.program_count, OperatingOne.mone_done,
-            OperatingOne.out_time)
+        print(
+            OperatingOne.name, OperatingOne.money, OperatingOne.pay_name, OperatingOne.program_name,
+            OperatingOne.program_minPay, OperatingOne.program_payBack, OperatingOne.program_count,
+            OperatingOne.mone_done,
+            OperatingOne.out_time
+        )
         if OperatingOne.name and OperatingOne.money and OperatingOne.pay_name and OperatingOne.program_name and OperatingOne.program_minPay and OperatingOne.program_payBack and OperatingOne.program_count and OperatingOne.mone_done:
             OperatingOne.save()
         models.User.objects.filter(name=request.session['user_name']).update(money=OperatingOne.mone_done)
         print('提款时间：', OperatingOne.out_time)
         print('账户余额：', OperatingOne.mone_done)
         print('购买产品成功！')
-        #*"+ OperatingOne.program_count +"="+ OperatingOne.program_minPay * OperatingOne.program_minPay +"
-        messages.success(request, "恭喜您，成功购入" + OperatingOne.program_name + "，总计:" + str(OperatingOne.program_minPay) + "*" + str(OperatingOne.program_count) + "=" + str(OperatingOne.program_minPay * OperatingOne.program_count) + "元")
+        # *"+ OperatingOne.program_count +"="+ OperatingOne.program_minPay * OperatingOne.program_minPay +"
+        messages.success(request,
+                         "恭喜您，成功购入" + OperatingOne.program_name + "，总计:" + str(OperatingOne.program_minPay) + "*" + str(
+                             OperatingOne.program_count) + "=" + str(
+                             OperatingOne.program_minPay * OperatingOne.program_count) + "元")
         return redirect("/index/")
 
     programDetail = models.ProgramInfo.objects.get(id=pk)
     personalInfo = models.User.objects.get(name=request.session['user_name'])
-    #personalInfo =models.User.objects.filter(name=username)
+    # personalInfo =models.User.objects.filter(name=username)
     print(programDetail)
     print(personalInfo)
 
-    return render(request, 'index/buyProgramDetails.html', {'programDetail':programDetail, 'personalInfo':personalInfo})
+    return render(request, 'index/buyProgramDetails.html',
+                  {'programDetail': programDetail, 'personalInfo': personalInfo})
 
 
 def elseinfo(request):
-	return render(request, 'DFJJ/elseinfo.html')
+    return render(request, 'DFJJ/elseinfo.html')
+
 
 def userCenter(request):
     if not request.session.get('is_login', None):
@@ -222,15 +298,18 @@ def userCenter(request):
     moneyTotall = 0
     for OperatingOne in OperatingOnes:
         print(OperatingOne.name, OperatingOne.money, OperatingOne.pay_name, OperatingOne.program_name,
-            OperatingOne.program_minPay, OperatingOne.program_payBack, OperatingOne.program_count, OperatingOne.mone_done,
-            OperatingOne.out_time)
+              OperatingOne.program_minPay, OperatingOne.program_payBack, OperatingOne.program_count,
+              OperatingOne.mone_done,
+              OperatingOne.out_time)
         payToday += OperatingOne.program_minPay * OperatingOne.program_payBack * OperatingOne.program_count / 100
         moneyTotall += OperatingOne.program_minPay * OperatingOne.program_count
         print(payToday)
     moneyTotall += user.money
     moneyNow = user.money
     print(moneyTotall)
-    return render(request, 'index/userCenter.html', {'payToday':round(payToday, 2), 'moneyTotall':moneyTotall, 'moneyNow':moneyNow})
+    return render(request, 'index/userCenter.html',
+                  {'payToday': round(payToday, 2), 'moneyTotall': moneyTotall, 'moneyNow': moneyNow})
+
 
 '''
     if not request.session.get('is_login', None):
@@ -248,6 +327,7 @@ def userCenter(request):
     request.session['accountAll'] = accountAlls
 '''
 
+
 def banckAndaccount(request):
     if not request.session.get('is_login', None):
         return redirect("/login/")
@@ -260,20 +340,21 @@ def banckAndaccount(request):
         pay_name = request.POST.get('pay_name', None)
 
         if realName and bank and bank_details and bank_acount and pay_name:
-            #user.objects.filter(pk=some_value).update(field1='some value')
-            #user_id = request.session['user_id']
+            # user.objects.filter(pk=some_value).update(field1='some value')
+            # user_id = request.session['user_id']
             user = models.User
-            #print(user)
-            #print(type(user))
-            #print(user.money)
-            #print(realName, bank, bank_details, bank_acount, pay_name)
-            user.objects.filter(name=request.session['user_name']).update(realName=realName, bank=bank, bank_details=bank_details, bank_acount=bank_acount, pay_name=pay_name)
-            #user = models.User.objects.get(name=request.session['user_name'])
-            #user.objects.filter(id=user.id).update(realName=realName, bank=bank, bank_details=bank_details, bank_acount=bank_acount, pay_name=pay_name)
+            # print(user)
+            # print(type(user))
+            # print(user.money)
+            # print(realName, bank, bank_details, bank_acount, pay_name)
+            user.objects.filter(name=request.session['user_name']).update(realName=realName, bank=bank,
+                                                                          bank_details=bank_details,
+                                                                          bank_acount=bank_acount, pay_name=pay_name)
+            # user = models.User.objects.get(name=request.session['user_name'])
+            # user.objects.filter(id=user.id).update(realName=realName, bank=bank, bank_details=bank_details, bank_acount=bank_acount, pay_name=pay_name)
             messages.success(request, "改动成功")
             return redirect("/userCenter/")
 
-        
         return render(request, 'index/banckAndaccount.html')
 
     user = models.User.objects.get(name=request.session['user_name'])
@@ -291,36 +372,37 @@ def banckAndaccount(request):
 def personalProgramDetails(request):
     if not request.session.get('is_login', None):
         return redirect("/login/")
-    #now =datetime.datetime.now()
-    #print(request.session['user_name']) 
+    # now =datetime.datetime.now()
+    # print(request.session['user_name'])
     start = now().date()
     end = start + timedelta(days=1)
-    #personalProgramDetails = models.OperatingInfo.objects.all().filter(name=request.session['user_name'], out_time__gt=now)
-    #personalProgramDetails = models.OperatingInfo.objects.all().filter(out_time__range=(start, end))
-    personalProgramDetails = models.OperatingInfo.objects.all().filter(name=request.session['user_name'], out_time__gt=start)
-    #print(personalProgramDetails)
+    # personalProgramDetails = models.OperatingInfo.objects.all().filter(name=request.session['user_name'], out_time__gt=now)
+    # personalProgramDetails = models.OperatingInfo.objects.all().filter(out_time__range=(start, end))
+    personalProgramDetails = models.OperatingInfo.objects.all().filter(name=request.session['user_name'],
+                                                                       out_time__gt=start)
+    # print(personalProgramDetails)
     if personalProgramDetails:
         print('Hello')
     else:
         print('Goodbye')
     for personalProgramDetail in personalProgramDetails:
-        #personalProgramDetail = models.OperatingInfo
+        # personalProgramDetail = models.OperatingInfo
         print(
-                personalProgramDetail.name,
-                personalProgramDetail.money, 
-                personalProgramDetail.pay_name, 
-                personalProgramDetail.program_name, 
-                personalProgramDetail.program_minPay, 
-                personalProgramDetail.program_payBack, 
-                personalProgramDetail.program_count, 
-                personalProgramDetail.mone_done, 
-                personalProgramDetail.c_time, 
-                personalProgramDetail.out_time
+            personalProgramDetail.name,
+            personalProgramDetail.money,
+            personalProgramDetail.pay_name,
+            personalProgramDetail.program_name,
+            personalProgramDetail.program_minPay,
+            personalProgramDetail.program_payBack,
+            personalProgramDetail.program_count,
+            personalProgramDetail.mone_done,
+            personalProgramDetail.c_time,
+            personalProgramDetail.out_time
 
-            )
+        )
 
-    #profit = float(programDetail.minPay)  / 100 * float(program_count) * float(OperatingOne.payDay)
-    return render(request, 'index/personalProgramDetails.html', {'personalProgramDetails':personalProgramDetails})
+    # profit = float(programDetail.minPay)  / 100 * float(program_count) * float(OperatingOne.payDay)
+    return render(request, 'index/personalProgramDetails.html', {'personalProgramDetails': personalProgramDetails})
 
 
 def register1(request):

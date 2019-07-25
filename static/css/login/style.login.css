@@ -92,3 +92,10 @@ button{
     color:#c2fbfe;
 }
 form{ position:absolute;z-index:100 }
+#form-captcha .img{
+    width:40%;
+}
+
+#id_captcha_1{
+    width: 50%
+}

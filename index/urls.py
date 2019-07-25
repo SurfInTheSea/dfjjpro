@@ -11,6 +11,7 @@ urlpatterns = [
 	path('maintz/', views.maintz, name='maintz'),
 	path('userCenter/', views.userCenter, name='userCenter'),
 	path('login/', views.login, name='login'),
+	path('logout/', views.logout, name='logout'),
 	path('register/', views.register, name='register'),
 	path('banckAndaccount/', views.banckAndaccount, name='banckAndaccount'),
 	path('personalProgramDetails/', views.personalProgramDetails, name='personalProgramDetails'),
