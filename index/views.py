@@ -246,10 +246,14 @@ def buyProgramDetails(request, pk):
         return redirect("/login/")
 
     if request.method == "POST":
-        programDetail = models.ProgramInfo.objects.get(id=pk)
-        personalInfo = models.User.objects.get(name=request.session['user_name'])
+        programDetail = models.ProgramInfo.objects.get(id=pk)  # 获取订单项目详情
+        personalInfo = models.User.objects.get(name=request.session['user_name'])  # 获取用户详情
 
         program_count = request.POST.get('program_count', None)
+
+        UserName = request.session['user_name']
+        UserNameNextCount = models.User.objects.all().filter(YourPre=UserName).count()
+        YourLevel = select_level(UserNameNextCount)     # 返回的是VipLevel类，有三个属性（VipName\VipNub\VipExtra）这里主要用的是VipExtra
         try:
             f = float(program_count)
         except ValueError:
@@ -257,6 +261,13 @@ def buyProgramDetails(request, pk):
             messages.success(request, "请正确填写您需要购入的数量！")
             return redirect("/index/")
         # print(programDetail, personalInfo, program_count)
+
+
+        # OperatingOne.payDay = programDetail.payDay
+        if personalInfo.money < (float(programDetail.minPay) * float(program_count)):
+            print('余额不足！')
+            messages.success(request, "余额不足！请及时到充值渠道充值哦")
+            return redirect("/index/")
 
         OperatingOne = models.OperatingInfo.objects.create()
         OperatingOne.name = personalInfo.name
@@ -267,13 +278,12 @@ def buyProgramDetails(request, pk):
         OperatingOne.program_minPay = programDetail.minPay
         OperatingOne.program_payBack = programDetail.payBack
         OperatingOne.program_count = program_count
-        # OperatingOne.payDay = programDetail.payDay
-        if personalInfo.money < (float(programDetail.minPay) * float(program_count)):
-            print('余额不足！')
-            messages.success(request, "余额不足！请及时到充值渠道充值哦")
-            return redirect("/index/")
+
         OperatingOne.mone_done = personalInfo.money - float(programDetail.minPay) * float(program_count)
-        OperatingOne.payMoney = round((float(programDetail.minPay) * float(program_count)), 2)
+        RightLilv = (YourLevel.VipExtra + 100)/100 * float(programDetail.payBack)
+        OperatingOne.program_payBack = RightLilv
+        OperatingOne.payMoney = round(
+            (float(programDetail.minPay) * float(program_count) * RightLilv / 100), 2)
         now = datetime.datetime.now()
         OperatingOne.out_time = now + datetime.timedelta(days=programDetail.payDay)
         print(
@@ -291,8 +301,7 @@ def buyProgramDetails(request, pk):
         # *"+ OperatingOne.program_count +"="+ OperatingOne.program_minPay * OperatingOne.program_minPay +"
         messages.success(request,
                          "恭喜您，成功购入" + OperatingOne.program_name + "，总计:" + str(OperatingOne.program_minPay) + "*" + str(
-                             OperatingOne.program_count) + "="
-                         + str(OperatingOne.program_minPay * OperatingOne.program_count) + "元")
+                             OperatingOne.program_count) + "元")
         return redirect("/index/")
 
     programDetail = models.ProgramInfo.objects.get(id=pk)
@@ -395,6 +404,24 @@ def banckAndaccount(request):
 
     return render(request, 'index/banckAndaccount.html')
 
+def select_level(count):
+    NubLevels1 = models.VipLevel.objects.values("VipNub").order_by("-VipNub")
+    for NubLevel1 in NubLevels1:
+        if count > NubLevel1['VipNub']:
+            return models.VipLevel.objects.get(VipNub=NubLevel1['VipNub'])
+# myNext
+
+def myNext(request):
+    if not request.session.get('is_login', None):
+        return redirect("/login/")
+    UserName = request.session['user_name']
+    UserNameNextCount = models.User.objects.all().filter(YourPre=UserName).count()
+    YourLevel = select_level(UserNameNextCount)
+    YourNexts = models.User.objects.values("name").filter(YourPre=UserName)
+    return render(request, 'index/myNext.html', {"YourLevel": YourLevel,
+                                                 "UserNameNextCount": UserNameNextCount,
+                                                 "YourNexts": YourNexts})
+
 
 def personalProgramDetails(request):
     if not request.session.get('is_login', None):
@@ -433,6 +460,8 @@ def personalProgramDetails(request):
 
 def register1(request):
     return render(request, 'login/register1.html', {})
+
+
 
 
 

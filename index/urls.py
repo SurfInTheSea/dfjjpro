@@ -13,6 +13,7 @@ urlpatterns = [
 	path('login/', views.login, name='login'),
 	path('logout/', views.logout, name='logout'),
 	path('register/', views.register, name='register'),
+	path('myNext/', views.myNext, name='myNext'),
 	path('banckAndaccount/', views.banckAndaccount, name='banckAndaccount'),
 	path('personalProgramDetails/', views.personalProgramDetails, name='personalProgramDetails'),
 	# path('programDetails/(?P<pk>[0-9]+)/$', indexView.programDetails, name='programDetails'),

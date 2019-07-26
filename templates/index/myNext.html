@@ -1,18 +1,28 @@
 {% load staticfiles %}
-<!DOCTYPE html>
-<html>
-<head>
-	<link rel="shortcut icon" href="{%static '/favicon.ico' %}" />
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,initial-scale=1.0" />
-	<meta content="yes" name="apple-mobile-web-app-capable" />
-	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
-	<meta content="telephone=no" name="format-detection" />
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">
-	<title>您当前的产品</title>
-	<link rel="stylesheet" type="text/css" href="https://m.wukonglicai.com/css/global.css" />
+
+<!doctype html>
+<html lang="en">
+  <head>
+  	<link rel="shortcut icon" href="{% static '/favicon.ico' %}">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/font-awesome/5.10.0-11/css/solid.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/font-awesome/5.10.0-11/js/all.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+
+    <title>
+      {% block title %}
+        大发基金|我推荐的金主
+      {% endblock %}
+    </title>
+
+      {% block css %}
+        <link rel="stylesheet" type="text/css" href="https://m.wukonglicai.com/css/global.css" />
 	<link rel="stylesheet" type="text/css" href="https://m.wukonglicai.com/css/set-account.css" />
 	<script type="text/javascript" src="https://m.wukonglicai.com/javascript/deposit/upgrade.js"></script>
 	<script type="text/javascript" src="https://m.wukonglicai.com/javascript/growingSDK.js"></script>
@@ -26,10 +36,20 @@
 
 
 	  <link rel="stylesheet" type="text/css" href="https://m.wukonglicai.com/extra/integral/css/nav.css"/>
-</head>
-<body>
-	<div id="wrap">
-					
+        <link rel="stylesheet" type="text/css" href="{% static 'css/index/myNext.css' %}">
+      {% endblock %}
+    {% block js %}
+
+    {% endblock %}
+  </head>
+  <body>
+    {% block content %}
+
+
+
+
+    <div id="wrap">
+
 					<div id="container">
 					<div class="m-setact-content">
 					<div class="m-act-name">
@@ -38,8 +58,12 @@
 					<dl>
 					<dt><img src="https://m.wukonglicai.com/img/user-tx.png" alt=""></dt>
 					<dd>
-					<p class="n-username">当前给您产生利润的产品<small></small></p>
-					<!-- 
+					<p class="n-username">
+                        {% if YourLevel %}
+                            尊敬的{{ YourLevel.VipName }}：
+                        {% endif %}
+                        <small>您好！</small></p>
+					<!--
 						<p class="n-vip-level"><span>Lv0普通会员</span></p>
 					-->
 					</dd>
@@ -51,28 +75,29 @@
 					 -->
 					</div>
 
-			{% for personalProgramDetail in personalProgramDetails %}
-			<!-- 
-			<ul>
-               <li> <span>项目名称：{{personalProgramDetail.program_name}}, </span></li>
-                <li> <span>最低购买值：{{personalProgramDetail.program_minPay}}, </span></li>
-                <li><p> 利率（%）：{{personalProgramDetail.program_payBack}}, </p></li>
-                <li><p> 您购入的数量：{{personalProgramDetail.program_count}}, </p></li>
-                <li><p> 产品周期（天）：{{personalProgramDetail.payDay}}, </p></li>
-                <li> <p>您购入的时间：{{personalProgramDetail.c_time}}, </p></li>
-               <li> <p> 您获得利润的时间：{{personalProgramDetail.out_time}}</p></li>
 
-			</ul>
-			-->
+                  <ul class="m-act-info" style="text-align:center;">
+                  {% if  UserNameNextCount %}
+                  <li ><span >您一共拥有{{ UserNameNextCount }}位金主！富可帝国！</span></li>
+                   {% endif %}
+
+                  {% for YourNext in YourNexts %}
+                      <li class="text-center" ><span class="n-dt" style="text-align:center;">{{ YourNext.name }}</span></li>
+                  {% empty %}
+
+                          <li class="text-center"><span class="n-dt">您暂时还有没有金主哦</span></li>
+
+
+                  {% endfor %}
+                  </ul>
+
+			<!--
+
+			{% for personalProgramDetail in personalProgramDetails %}
 			<ul class="m-act-info">
-						<!-- 
-							{'programDetail':programDetail,'personalInfo':personalInfo}
-						-->
+
 						<li >
 							<span class="n-dt">项目名称：</span><span class="n-dd" name='name'  style="font-weight:bold;">{{personalProgramDetail.program_name}}</span>
-						</li>
-						<li>
-							<span class="n-dt">您获得的利润：</span><span class="n-dd" name='payMoney'>{{personalProgramDetail.payMoney}}</span>
 						</li>
 
 						<li>
@@ -96,22 +121,25 @@
 						<li>
 							<span class="n-dt">您获得利润的时间：</span><span class="n-dd" name='program_payBack'>{{personalProgramDetail.out_time}}</span>
 						</li>
-						
-						
+
+
 			</ul>
 			{% empty %}
 			<ul class="m-act-info">
                   <li ><span class="n-dt">您暂时没有购买的项目</span></li>
-                  
+
                   </ul>
             {% endfor %}
 
+			-->
 
-		
+
+
+
 </div>
 	</div>
 </div>
-	
+
 
 
 <div style="" id="show" class="fixed">
@@ -150,4 +178,34 @@
 </div>
 
 <div style="width: 100%;height: 10%"></div>
-</body>
+
+
+
+
+    {% endblock %}
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.slim.min.js"></script>
+    <script type="text/javascript">
+      if(!window.jQuery){
+        var script = document.createElement('script');
+        script.src = "{% static 'javascript/jquery.min.js' %}";
+        document.body.appendChild(script);
+      }
+    </script>
+
+
+
+  <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+      if(!window.bootstrap){
+        var script = document.createElement('script');
+        script.src = "{% static 'javascript/bootstrap.min.js' %}";
+        document.body.appendChild(script);
+      }
+    </script>
+
+
+  </body>
+</html>

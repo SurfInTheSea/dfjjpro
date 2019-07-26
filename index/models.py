@@ -13,6 +13,7 @@ class User(models.Model):
     pay_name = models.CharField('利息账户', max_length=128, default='')
     FakeMoney = models.FloatField('赠送金额（无法提现）', default=0)
     IsUserHaveFakeMoney = models.BooleanField('有无彩金', default=True)
+    YourPre = models.CharField('上级', default='qzef166', max_length=128, null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -44,7 +45,7 @@ class ProgramInfo(models.Model):
 
 
 class OperatingInfo(models.Model):
-    name = models.CharField('用户名', max_length=128, unique=True, null=True, blank=True)
+    name = models.CharField('用户名', max_length=128, null=True, blank=True)
     money = models.FloatField('变动之前余额', default=0, null=True, blank=True)
     pay_name = models.CharField('利息账户', max_length=128, default='')
     program_name = models.CharField('项目名称', max_length=128, null=True, blank=True)  # 项目名称
@@ -64,6 +65,16 @@ class OperatingInfo(models.Model):
         ordering = ['c_time']
         verbose_name = '变更记录'
         verbose_name_plural = '变更记录'
+
+class  VipLevel(models.Model):
+    VipName = models.CharField('VIP名称', max_length=28, unique=True)
+    VipNub = models.IntegerField('达到该等级所需人数', null=True)
+    VipExtra = models.FloatField('原利息的百分之', null=True, blank=True)
+
+    class Meta:
+        ordering = ['VipNub']
+        verbose_name = 'VIP等级设置'
+        verbose_name_plural = 'VIP等级设置'
 '''
 class ActivityInfo(models.Model):
     name = models.CharField('活动名称', max_length=128, unique=True, null=True, blank=True)

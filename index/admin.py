@@ -3,7 +3,7 @@ from . import models
 # Register your models here.
 
 class UserAdmin(admin.ModelAdmin):
-	list_display = ('name', 'password', 'money', 'realName', 'bank', 'bank_details', 'bank_acount', 'FakeMoney', 'pay_name', 'c_time')
+	list_display = ('name', 'YourPre', 'password', 'money', 'realName', 'bank', 'bank_details', 'bank_acount', 'FakeMoney', 'pay_name', 'IsUserHaveFakeMoney', 'c_time')
 	actions_on_top = True
 	actions_on_bottom = True
 	actions_selection_counter = True
@@ -42,6 +42,10 @@ class ProgramInfoAdmin(admin.ModelAdmin):
     # list_editable = ['minPay', 'payBack', 'payDay',]
     search_fields = ('name', 'payBack', )
 
+class ProgramVipLevel(admin.ModelAdmin):
+	list_display = ('VipName', 'VipNub', 'VipExtra')
+	actions_selection_counter = True
+	empty_value_display = ' -空白- '
 
 '''
 class ProgramActivityInfo(admin.ModelAdmin):
@@ -62,6 +66,7 @@ admin.site.site_title = '大发基金'
 admin.site.register(models.User, UserAdmin)
 admin.site.register(models.ProgramInfo, ProgramInfoAdmin)
 admin.site.register(models.OperatingInfo, ProgramOperatingInfo)
+admin.site.register(models.VipLevel, ProgramVipLevel)
 # admin.site.register(models.ActivityInfo, ProgramActivityInfo)
 
 
