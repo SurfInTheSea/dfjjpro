@@ -16,7 +16,7 @@
 {% endblock %}
 
 {% block js %}
-
+<script type="text/javascript" src="{%static '/userCenter/public.js' %}"></script>
 {% endblock %}
 
 {% block content %}
@@ -277,13 +277,28 @@
 
 {% include 'includeBase.html' %}
 
-{% if messages %}
-	<script>
-		{% for msg in messages %}
-			alert('{{msg.message}}');
-		{% endfor %}
-	</script>
-{% endif %}
+		 {% if messages %}
+		<div class="mengc" style="box-sizing: border-box; position: fixed; top: 0px; bottom: 0px; width: 100%; padding-left: 0.7rem; padding-right: 0.7rem; background-color: rgba(0, 0, 0, 0.5); z-index: 9999; font-size: 0.24rem;">
+			<div class="tk-box" style="position: relative; top: 3.2rem; box-sizing: border-box; width: 100%; background-color: rgb(255, 255, 255); padding: 0.5rem 0.31rem 0.5rem 0.3rem; border-radius: 0.2rem;">
+				{% for msg in messages %}
+	             {{ msg.message }}
+	            {% endfor %}
+				<div class="close" onclick="close_box_body()" style="width: 0.66rem; height: 0.66rem; border: 1px solid rgb(255, 255, 255); border-radius: 50%; position: absolute; left: 50%; bottom: -1.1rem; margin-left: -0.33rem;">
+					<div class="before" style="position: absolute; height: 1px; width: 0.4rem; top: 0.32rem; left: 0.13rem; background-color: rgb(255, 255, 255); transform: rotate(45deg);">
+
+					</div>
+					<div class="after" style="position: absolute; height: 1px; width: 0.4rem; top: 0.32rem; left: 0.13rem; background-color: rgb(255, 255, 255); transform: rotate(-45deg);">
+
+					</div>
+				</div>
+			</div>
+		</div>
+			{% endif %}
+
+
+
+
+
 
 {% endblock %}
 

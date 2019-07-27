@@ -301,7 +301,8 @@ def buyProgramDetails(request, pk):
         # *"+ OperatingOne.program_count +"="+ OperatingOne.program_minPay * OperatingOne.program_minPay +"
         messages.success(request,
                          "恭喜您，成功购入" + OperatingOne.program_name + "，总计:" + str(OperatingOne.program_minPay) + "*" + str(
-                             OperatingOne.program_count) + "元")
+                             OperatingOne.program_count) + "元", extra_tags='email')
+        # messages.error(request, 'Email box full', extra_tags='email')
         return redirect("/index/")
 
     programDetail = models.ProgramInfo.objects.get(id=pk)
@@ -324,6 +325,11 @@ def userCenter(request):
     user = models.User.objects.filter(name=request.session['user_name']).get()
     FakeMoney = user.FakeMoney
     print(FakeMoney)
+
+    UserName = request.session['user_name']
+    UserNameNextCount = models.User.objects.all().filter(YourPre=UserName).count()
+    YourLevel = select_level(UserNameNextCount)  # 返回的是VipLevel类，有三个属性（VipName\VipNub\VipExtra）这里主要用的是VipExtra
+
     now = datetime.datetime.now()
     OperatingOnes = models.OperatingInfo.objects.filter(name=request.session['user_name'], out_time__gt=now)
     payToday = 0
@@ -343,7 +349,9 @@ def userCenter(request):
     return render(request, 'index/userCenter.html',
                   {'payToday': round(payToday, 2),
                    'moneyTotall': moneyTotall,
-                   'moneyNow': moneyNow, 'FakeMoney': FakeMoney})
+                   'moneyNow': moneyNow,
+                   'FakeMoney': FakeMoney,
+                   'YourLevel': YourLevel.VipName})
 
 
 '''
