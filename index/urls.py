@@ -8,6 +8,8 @@ urlpatterns = [
 	path('', views.index,name='index'),
 	path('index/', views.index, name='index'),
 	path('newguide/', views.newguide, name='newguide'),
+	path('guide/', views.guide, name='guide'),
+	re_path('guidedetails/(?P<pk>[0-9]+)/$', views.guidedetails, name='guidedetails'),
 	path('maintz/', views.maintz, name='maintz'),
 	path('userCenter/', views.userCenter, name='userCenter'),
 	path('login/', views.login, name='login'),
@@ -21,5 +23,5 @@ urlpatterns = [
 	# path(r'^programDetails/(?:page-(?P<page_number>\d+)/)?$', indexView.programDetails, name='programDetails'),
 	re_path('programDetails/(?P<pk>[0-9]+)/$', views.programDetails, name='programDetails'),
 	re_path('programDetails/(?P<pk>[0-9]+)/buyProgramDetails/$', views.buyProgramDetails, name='buyProgramDetails'),
-
 ]
+

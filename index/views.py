@@ -4,7 +4,6 @@ from .forms import UserForm, RegisterForm
 import hashlib
 from django.contrib import messages
 import datetime
-
 from django.utils.timezone import now, timedelta
 
 
@@ -468,9 +467,24 @@ def personalProgramDetails(request):
 
 def register1(request):
     return render(request, 'login/register1.html', {})
+def guide(request):
+    TitleInfos = models.TitleDetails.objects.all()
+    return render(request, 'index/guide.html', {'TitleInfos': TitleInfos})
+def guidedetails(request, pk):
+    TitleInfo = models.TitleDetails.objects.get(id=pk)
+    return render(request, 'index/guidedetails.html', {'TitleInfo': TitleInfo})
+
+def bad_request(request, exception, template_name='errors/page_400.html'):
+    return render(request, template_name)
 
 
+def permission_denied(request, exception, template_name='errors/page_403.html'):
+    return render(request, template_name)
 
 
+def page_not_found(request, exception, template_name='errors/page_404.html'):
+    return render(request, template_name)
 
 
+def server_error(request, exception, template_name='errors/page_500.html'):
+    return render(request, template_name)

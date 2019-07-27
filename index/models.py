@@ -75,6 +75,18 @@ class  VipLevel(models.Model):
         ordering = ['VipNub']
         verbose_name = 'VIP等级设置'
         verbose_name_plural = 'VIP等级设置'
+
+
+
+class TitleDetails(models.Model):
+    TitleName = models.CharField('文章名称', max_length=128)
+    TitleBody = models.TextField('文章内容')
+    CreateTime = models.DateTimeField('创建时间')
+
+    class Meta:
+        ordering = ['CreateTime']
+        verbose_name = '文章内容'
+        verbose_name_plural = '文章内容'
 '''
 class ActivityInfo(models.Model):
     name = models.CharField('活动名称', max_length=128, unique=True, null=True, blank=True)

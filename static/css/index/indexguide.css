@@ -1,0 +1,35 @@
+.container1{
+    color:#FFF ! important;
+    background: -webkit-linear-gradient(bottom,#dc3b3f 2%,#dc3b40 50%,#db3b40 51%,#d7363b);
+}
+
+.nubback{
+        width: 5em;
+        height: 5em;
+        border-radius: 50%;
+        background: #fe8580;
+        float: left;
+        margin-left: .8rem;
+        margin-right: .5rem;
+        text-align: center;
+}
+.nubback-i{
+    font-style: inherit;
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+    line-height: 1.3rem;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid;
+    border-radius: 80%;
+    font-size: 1.8rem;
+    margin-top: 0.5rem;
+    margin-left: -0.1rem;
+    padding: .1rem;
+
+
+}
+.bg-danger-circle{
+    background-color: #fe8580!important;
+}

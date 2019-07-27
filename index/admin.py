@@ -47,6 +47,12 @@ class ProgramVipLevel(admin.ModelAdmin):
 	actions_selection_counter = True
 	empty_value_display = ' -空白- '
 
+
+class ProgamTitleDetails(admin.ModelAdmin):
+	list_distpaly = ('TitleName', 'TitleBody', 'CreateTime')
+	actions_selection_counter = True
+	empty_value_display = ' -空白- '
+
 '''
 class ProgramActivityInfo(admin.ModelAdmin):
 	list_display = ('name', 'activityText', 'activityMoney', 'c_time')
@@ -67,6 +73,7 @@ admin.site.register(models.User, UserAdmin)
 admin.site.register(models.ProgramInfo, ProgramInfoAdmin)
 admin.site.register(models.OperatingInfo, ProgramOperatingInfo)
 admin.site.register(models.VipLevel, ProgramVipLevel)
+admin.site.register(models.TitleDetails, ProgamTitleDetails)
 # admin.site.register(models.ActivityInfo, ProgramActivityInfo)
 
 

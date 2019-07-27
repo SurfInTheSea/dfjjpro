@@ -1,0 +1,8 @@
+.course-heading {
+    text-align: center;
+    text-transform: uppercase;
+    color: #7A43B6;
+    border: 5px solid #7A43B6;
+    margin: 50px 0;
+    padding: 10px;
+}

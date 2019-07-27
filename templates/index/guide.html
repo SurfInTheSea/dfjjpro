@@ -1,0 +1,238 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+
+{% block title %}
+大发基金|新手指引
+{% endblock %}
+
+
+{% block css %}
+ <link rel="stylesheet" type="text/css" href="{% static '/css/index/nav.css' %}">
+ <link rel="stylesheet" type="text/css" href="{% static '/css/index/indexguide.css' %}">
+{% endblock %}
+
+
+
+{% block js %}
+
+{% endblock %}
+
+
+
+
+
+
+{% block content %}
+<div style="width:100%;height:2px"></div>
+    <div class="container1 container-fluid text-center col-12 rounded">
+      <div class="row d-flex align-items-center">
+          <a href="/index" class="col-1" >
+              <i class="fas fa-chevron-left" style="color:#fff"></i>
+          </a>
+        <div class="col-11 mt-2">
+            <h3>大发基金指引</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+
+                <a href="/newguide">
+
+                <div class="clo-12 d-flex align-items-center m-2 bg-light rounded">
+
+
+                    <div class="col-2 bg-danger-circle rounded-circle" style="width:50px;height:50px">
+                        <i class="nubback-i">0</i>
+                    </div>
+
+                    <div class="col-8 p-2">
+                        <div class="col-12 ">
+                            <h5>
+                                新手5000大礼包
+                            </h5>
+                        </div>
+                        <div class="col-12">
+                            <p>
+                                没有任何门槛，注册就送5000RMB...
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-2">
+
+                            <i class="fas fa-chevron-right"></i>
+
+                    </div>
+                </div>
+
+                 </a>
+
+
+
+                {% for TitleInfo in TitleInfos %}
+                  <a href="/guidedetails/{{ TitleInfo.id }}">
+                                <div class="clo-12 d-flex align-items-center m-2 bg-light rounded">
+
+
+                                    <div class="col-2 bg-danger-circle rounded-circle" style="width:50px;height:50px">
+                                        <i class="nubback-i ">{{forloop.counter}}</i>
+                                    </div>
+
+                                    <div class="col-8 p-2">
+                                        <div class="col-12">
+                                            <h5>
+                                                {{ TitleInfo.TitleName }}
+                                            </h5>
+                                        </div>
+                                        <div class="col-12">
+                                            <p>
+                                                {{ TitleInfo.Body }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+
+                                            <i class="fas fa-chevron-right"></i>
+
+                                    </div>
+                                </div>
+                                </a>
+
+                {% empty %}
+
+
+                {% endfor %}
+
+
+
+
+
+
+
+
+
+
+<!--
+
+                 <a href="#">
+                <div class="clo-12 d-flex align-items-center m-2 bg-light rounded">
+
+
+                    <div class="col-2 bg-danger-circle rounded-circle" style="width:50px;height:50px">
+                        <i class="nubback-i">2</i>
+                    </div>
+
+                    <div class="col-8 p-2">
+                        <div class="col-12">
+                            <h5>
+                                VIP介绍
+                            </h5>
+                        </div>
+                        <div class="col-12">
+                            <p>
+                                大发VIP等级设计，有趣又有利！...
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-2">
+
+                            <i class="fas fa-chevron-right"></i>
+
+                    </div>
+                </div>
+                </a>
+
+
+               <div class="clo-12 d-flex align-items-center m-2 bg-light rounded">
+
+
+                    <div class="col-2 bg-danger-circle rounded-circle" style="width:50px;height:50px">
+                        <i class="nubback-i">3</i>
+                    </div>
+
+                    <div class="col-8 p-2">
+                        <div class="col-12">
+                            <h5>
+                                每日嘉奖
+                            </h5>
+                        </div>
+                        <div class="col-12">
+                            <p>
+                                每日嘉奖每日嘉奖每日嘉奖每日嘉...
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <a href="/newguide">
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+
+
+
+
+
+               <div class="clo-12 d-flex align-items-center m-2 bg-light rounded">
+
+
+                    <div class="col-2 bg-danger-circle rounded-circle" style="width:50px;height:50px">
+                        <i class="nubback-i">4</i>
+                    </div>
+
+                    <div class="col-8 p-2">
+                        <div class="col-12">
+                            <h5>
+                                每日嘉奖
+                            </h5>
+                        </div>
+                        <div class="col-12">
+                            <p>
+                                每日嘉奖每日嘉奖每日嘉奖每日嘉...
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <a href="/newguide">
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+
+
+
+ -->
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+<!--
+
+    background: -webkit-linear-gradient(bottom,#dc3b3f 2%,#dc3b40 50%,#db3b40 51%,#d7363b
+
+-->
+
+    {% include 'includeBase.html' %}
+
+
+
+
+
+{% endblock %}
+
+
+

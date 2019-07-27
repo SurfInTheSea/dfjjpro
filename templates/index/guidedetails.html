@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+
+{% block title %}
+大发基金|详情介绍
+{% endblock %}
+
+
+{% block css %}
+ <link rel="stylesheet" type="text/css" href="{% static '/css/index/nav.css' %}">
+ <link rel="stylesheet" type="text/css" href="{% static '/css/index/indexguidedetails.css' %}">
+{% endblock %}
+
+
+
+{% block js %}
+
+{% endblock %}
+
+
+
+
+
+
+{% block content %}
+<div style="width:100%;height:2px"></div>
+
+<h3 class="course-heading">
+    内容详情
+</h3>
+
+{% if TitleInfo %}
+<div class="container-fluid padding">
+	<div class="row welcome text-center">
+		<div class="col-12">
+			<h4 class="display-5">{{TitleInfo.TitleName}}</h4>
+            <span class="col-6 text-right" style="">{{ TitleInfo.CreateTime }}</span>
+		</div>
+		<hr style="width:80%">
+		<div class="col-12">
+			<p class="lead">
+
+                {{TitleInfo.TitleBody}}
+
+			</p>
+		</div>
+	</div>
+</div>
+
+{% else %}
+<h3>出错啦</h3>
+{% endif %}
+
+
+<div class="container-fluid padding">
+	<div class="row welcome text-center">
+        <hr style="width:80%">
+		<div class="col-12">
+
+            <span class="display-5">最终解释权归大发基金所有</span>
+		</div>
+
+
+	</div>
+</div>
+
+
+
+
+
+    {% include 'includeBase.html' %}
+
+
+
+
+
+{% endblock %}
+
+
+
