@@ -1,0 +1,289 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+
+{% block title %}
+大发基金|登录注册
+{% endblock %}
+
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/login/loginRegister.css' %}">
+{% endblock %}
+
+
+
+{% block js %}
+
+{% endblock %}
+
+
+
+
+
+
+{% block content %}
+
+<div class="container bg-white">
+<div class="row d-flex align-items-center">
+    <a href="/index/" class="col-1 p-1 text-center">
+        <i class="fas fa-chevron-left"></i>
+    </a>
+    <div class="col-11 p-1 text-center"><h4 class="mt-2">注册页面</h4></div>
+    <hr class="m-1" style="width:100%">
+</div>
+
+</div>
+
+
+
+
+<div class="container bg-white">
+    <div class="row ">
+        <div class="col-12 pt-3 pb-3 text-center">
+            <img class="m-2" style="width:9rem" src="{% static 'images/login/logo.fd357e4.jpg' %}">
+        </div>
+    </div>
+        <div class="row text-center">
+            <a id="loginID" class="col-6 is-selected">
+                <div class="mint-tab-item-label">
+                    登录
+                </div>
+            </a>
+            <a id="registerID" class="col-6">
+                <div class="mint-tab-item-label">
+                    注册
+                </div>
+            </a>
+        </div>
+    <div style="width:100%;height:5px"></div>
+
+
+
+
+
+
+
+    <form action="/loginRegister/" method="post" name="login" id="login">
+
+
+
+         {% csrf_token %}
+
+        <div id="loginForm" class="row mt-2 text-center" >
+
+            <div class="form-wrap col-12" >
+
+
+
+
+                <div class="form-line-list">
+                    <div class="form-line clearfix">
+
+                            <!--
+                            <input type="text" placeholder="登录帐号" maxlength="11" class="form-input">
+
+                            -->
+                            {{ login_form.username}}
+
+
+
+                    </div> <!---->
+                </div>
+                <div class="form-line-list">
+                    <div class="form-line clearfix">
+
+
+                            <!--
+                            <input type="password" placeholder="登录密码" maxlength="16" class="form-input">
+
+                            -->
+                             {{ login_form.password }}
+
+
+                    <!---->
+                </div>
+
+
+                <div class="form-line-list">
+
+                    {{ login_form.captcha }}
+                    {{ login_form_form.captcha }}
+                    {{ login_form.captcha.errors }}
+
+
+                    <div class="form-line clearfix">
+                        <div class="form-left">
+
+                            <!--
+
+
+                            <input type="tel" placeholder="图形验证码" maxlength="4" class="form-input">
+                            -->
+
+                        </div>
+                        <div class="form-right"><!---->
+                            <div class="form-right-operate">
+                                <!--
+                                    <img alt="" src="/verifyCode.api?t=1564383912743">
+                                -->
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+              <!--
+
+                <div class="form-line-list">
+
+
+
+
+                    <div class="form-line clearfix">
+                        <div class="form-left">
+                                <input type="text"  id="id_reg_captcha_1" name="captcha_1" class="form-control form-control-captcha fl" placeholder="请输入验证码">
+
+                        </div>
+                        <div class="form-right">
+                            <div class="form-right-operate">
+
+                                <span class="v5-yzm fr">
+                                    <a href="#" class="next-captcha"><img src="{{ login_imgage_url }}" class="captcha" alt="captcha">换一张</a>
+                                </span>
+                                <input id="id_reg_captcha_0" name="captcha_0" type="hidden" value="{{ login_hashkey }}">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              -->
+
+
+
+            </div>
+
+
+
+
+
+                <!--
+                <div class="col-12">
+                    <div class="col-12">
+                        <div class="form-line"></div>
+                        <div class="form-line"></div>
+                    </div>
+                </div>
+                -->
+                <div class="btn-mt50 col-12">
+                    <button type="submit" id="loginID" name="submitName" value="login"  class="btn-width50 btn-default">登录</button>
+                </div>
+
+
+                <div class="col-12 forget-pwd">
+                    <a href="#" class="link-default">
+                        忘记密码
+                    </a>
+                </div>
+
+        </div>
+            </div>
+</form>
+<form action="/loginRegister/" method="post" name="register" id="register">
+    {% csrf_token %}
+        <div id="registerForm" class="row mt-2 text-center" style="display:none">
+
+            <div class="form-wrap col-12">
+                <div class="form-line-list">
+                    <div class="form-line clearfix">
+
+                        <div class="form-left">
+
+                            <!--
+                            <i class="icon icon-shoujihaoma"></i>
+                            <input type="tel" placeholder="输入账户" maxlength="11" class="form-input">
+                            -->
+                            {{ register_form.username }}
+
+                        </div>
+                        <div class="form-right"><!---->
+                            <div class="form-right-operate"></div>
+                        </div>
+                    </div> <!---->
+                </div>
+                <div class="form-line-list">
+                    <div class="form-line clearfix">
+                        <div class="form-left">
+                            <i class="icon icon-shoujihaoma"></i>
+                            <!--
+                            <input type="tel" placeholder="输入密码" maxlength="11" class="form-input">
+                            -->
+                            {{ register_form.password1 }}
+                        </div>
+                        <div class="form-right"><!---->
+                            <div class="form-right-operate"></div>
+                        </div>
+                    </div> <!---->
+                </div>
+
+                <div class="form-line-list">
+
+
+
+
+
+                    <div class="form-line clearfix">
+                        <div class="form-left">
+                            <i class="icon icon-shoujihaoma"></i>
+                            <!--
+                            <input type="tel" placeholder="再次输入密码" maxlength="11" class="form-input">
+                            -->
+                            {{ register_form.password2 }}
+                        </div>
+                        <div class="form-right"><!---->
+                            <div class="form-right-operate"></div>
+                        </div>
+                    </div> <!---->
+                </div>
+
+                <div class="form-line-list">
+
+                    {{ register_form.captcha }}
+                    {{ register_form.captcha.errors }}
+
+
+                    <!--
+                     <div class="form-line clearfix">
+                        <div class="form-left">
+                            <i class="icon icon-duanxinyanzheng2"></i>
+                            <input type="tel" placeholder="图形验证码" maxlength="4" class="form-input">
+                        </div>
+                        <div class="form-right">
+                            <div class="form-right-operate">
+                                <img alt="" src="/verifyCode.api?t=1564383912743">
+                            </div>
+                        </div>
+                    </div>
+                     -->
+                </div>
+            </div>
+                <div class="btn-mt50 col-12">
+                    <button type="submit" name="submitName" value="register" class="btn-width50 btn-default">注册</button>
+                </div>
+
+
+        </div>
+ </form>
+
+
+
+
+<script src="{%  static '/javascripts/login/loginRegister.js' %}"></script>
+
+
+{% endblock %}
+
+
+

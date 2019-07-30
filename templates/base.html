@@ -8,10 +8,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS
+    https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css
     <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
     <link href="https://cdn.bootcss.com/font-awesome/5.10.0-11/css/solid.css" rel="stylesheet">
     <script src="https://cdn.bootcss.com/font-awesome/5.10.0-11/js/all.js"></script>
+
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
    
@@ -50,7 +56,7 @@
   <script type="text/javascript">
       if(!window.bootstrap){
         var script = document.createElement('script');
-        script.src = "{% static 'javascript/bootstrap.min.js' %}";
+        script.src = "{% static 'javascripts/bootstrap.min.js' %}";
         document.body.appendChild(script);
       }
     </script>

@@ -25,7 +25,7 @@ SECRET_KEY = 'b6r*%@qwsx9t8^mcv+#688s6+lo%2=e+wgo2s2%9@gpm2o5xsg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -71,7 +71,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'DFJJproDjango.wsgi.application'
 
-
+CAPTCHA_OUTPUT_FORMAT = u'%(text_field)s %(hidden_field)s %(image)s'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 

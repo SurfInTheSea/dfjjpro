@@ -23,3 +23,38 @@ a{
     width:20%;
     height:10%;
 }
+
+.msg-css{
+    box-sizing: border-box;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    font-size: 0.24rem;
+}
+
+
+.tk-box{
+    position: relative;
+    top: 3.2rem;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    padding: 0.5rem 0.31rem 0.5rem 0.3rem;
+    border-radius: 0.2rem;
+}
+
+.close{
+    width: 0.66rem;
+    height: 0.66rem;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    bottom: -1.1rem;
+    margin-left: -0.33rem;
+}

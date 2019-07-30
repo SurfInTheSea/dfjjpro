@@ -22,7 +22,7 @@
     {% if messages %}
         <ul class="messages">
             {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}"{% endif %} style="">
+            <li>{% if message.tags %} class="{{ message.tags }}"{% endif %} style="">
                 {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
                 {{ message }}
             </li>
@@ -34,7 +34,7 @@
 
 
   <div class="col-12 col-sm-8 main-section">
-    <div clas="modal-content">
+    <div class="modal-content">
       <div class="col-12 user-img">
         <img src="{% static 'images/login/face.png' %}">
       </div>

@@ -1,10 +1,19 @@
 from django.shortcuts import render, redirect
 from . import models
-from .forms import UserForm, RegisterForm
+from .forms import UserForm, RegisterForm, LoginRegisterUser, LoginRegister
 import hashlib
 from django.contrib import messages
+from django.contrib.auth import authenticate, login as login_from_auth
 import datetime
 from django.utils.timezone import now, timedelta
+
+
+
+
+
+
+# from captcha.models import CaptchaStore
+# from captcha.helpers import captcha_image_url
 
 
 # from django.utils import timezone
@@ -86,7 +95,7 @@ def register(request):
 def logout(request):
     if not request.session.get('is_login', None):
         # 如果本来就未登录，也就没有登出一说
-        return redirect("/index/")
+        return redirect("/loginRegister/")
     request.session.flush()
     # 或者使用下面的方法
     # del request.session['is_login']
@@ -190,7 +199,7 @@ def base(request):
 def newguide(request):
     if not request.session.get('is_login', None):
         messages.success(request, "请先登录，5000新人红包在等您哦～～")
-        return redirect("/login/")
+        return redirect("/loginRegister/")
     if request.method == "POST":
         name = request.session['user_name']
         # messages.success(request, "POST:提交成功;用户名" + name + "")
@@ -242,7 +251,7 @@ def programDetails(request, pk):
 
 def buyProgramDetails(request, pk):
     if not request.session.get('is_login', None):
-        return redirect("/login/")
+        return redirect("/loginRegister/")
 
     if request.method == "POST":
         programDetail = models.ProgramInfo.objects.get(id=pk)  # 获取订单项目详情
@@ -320,7 +329,7 @@ def elseinfo(request):
 
 def userCenter(request):
     if not request.session.get('is_login', None):
-        return redirect("/login/")
+        return redirect("/loginRegister/")
     user = models.User.objects.filter(name=request.session['user_name']).get()
     FakeMoney = user.FakeMoney
     print(FakeMoney)
@@ -414,7 +423,7 @@ def banckAndaccount(request):
 def select_level(count):
     NubLevels1 = models.VipLevel.objects.values("VipNub").order_by("-VipNub")
     for NubLevel1 in NubLevels1:
-        if count > NubLevel1['VipNub']:
+        if count >= NubLevel1['VipNub']:
             return models.VipLevel.objects.get(VipNub=NubLevel1['VipNub'])
 # myNext
 
@@ -473,6 +482,68 @@ def guide(request):
 def guidedetails(request, pk):
     TitleInfo = models.TitleDetails.objects.get(id=pk)
     return render(request, 'index/guidedetails.html', {'TitleInfo': TitleInfo})
+
+def loginRegister(request):
+    if request.session.get('is_login', None):
+        return redirect("/index/")
+
+    if request.method == "POST":
+        if request.POST['submitName'] == 'login':
+            print('用户在请求登录')
+            login_form = UserForm(request.POST)
+            message = "请检查填写的内容！"
+            if login_form.is_valid():
+                username = login_form.cleaned_data['username']
+                password = login_form.cleaned_data['password']
+                try:
+                    user = models.User.objects.get(name=username)
+                    if user.password == hash_code(password):  # 哈希值和数据库内的值进行比对
+                        request.session['is_login'] = True
+                        request.session['user_id'] = user.id
+                        request.session['user_name'] = user.name
+                        request.session['money'] = user.money
+                        return redirect('/userCenter/')
+                    else:
+                        message = "密码不正确！"
+                except:
+                    message = "用户不存在！"
+            return render(request, 'login/loginRegister.html', locals())
+        if request.POST['submitName'] == 'register':
+            print('用户在请求注册')
+            register_form = LoginRegister(request.POST)
+            message = "请检查填写的内容！"
+            if register_form.is_valid():  # 获取数据
+                username = register_form.cleaned_data['username']
+                password1 = register_form.cleaned_data['password1']
+                password2 = register_form.cleaned_data['password2']
+                if password1 != password2:  # 判断两次密码是否相同
+                    message = "两次输入的密码不同！"
+                    return render(request, 'login/loginRegister.html', locals())
+                else:
+                    same_name_user = models.User.objects.filter(name=username)
+                    if same_name_user:  # 用户名唯一
+                        message = '用户已经存在，请重新选择用户名！'
+                        return render(request, 'login/loginRegister.html', locals())
+
+                    # 当一切都OK的情况下，创建新用户
+
+                    new_user = models.User.objects.create()
+                    new_user.name = username
+                    new_user.password = hash_code(password1)  # 使用加密密码
+                    new_user.save()
+                    user = models.User.objects.get(name=username)
+                    request.session['is_login'] = True
+                    request.session['user_id'] = user.id
+                    request.session['user_name'] = user.name
+                    request.session['money'] = user.money
+                    return redirect('/userCenter/')
+
+    login_form = LoginRegisterUser()
+    register_form = LoginRegister()
+    return render(request, 'login/loginRegister.html', {'login_form': login_form, 'register_form': register_form})
+
+
+
 
 def bad_request(request, exception, template_name='errors/page_400.html'):
     return render(request, template_name)

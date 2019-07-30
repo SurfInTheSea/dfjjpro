@@ -1,0 +1,129 @@
+.ui-view-container {
+    max-width: 64rem;
+    margin: 0 auto;
+    margin-top: 44px;
+}
+.logo-wrap {
+    text-align: center;
+    background: #fff;
+    padding: 2.5rem 0;
+}
+.container-login .logo-wrap img {
+    width: 13rem;
+}
+
+.mint-tab-item-label {
+    font-size: 1rem;
+    color: #646472;
+    height: 2rem;
+    line-height: 2rem;
+}
+.is-selected {
+    border-bottom: 3px solid #999;
+    margin-bottom: -3px;
+    width:80%;
+}
+
+.btn-width50 {
+    width: 50%;
+    height: 1.9rem;
+    font-size: 1rem;
+    line-height: 1.9rem;
+    border-radius: 3.9rem;
+}
+.btn-width50{
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+}
+.btn-default {
+    color: #fff;
+    background-color: #313140;
+    border: 1px solid #313140;
+}
+
+.btn-mt50 {
+    margin: 4rem 0 2rem 0;
+    text-align: center;
+    display: block;
+}
+
+
+.form-line {
+    padding: 1rem 1.2rem 1rem 0;
+    position: relative;
+    border-bottom: 1px solid #DBDBEA;
+    line-height: 1.8rem;
+}
+
+.forget-pwd {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 1.4rem;
+}
+
+.link-default {
+    color: #31313F;
+    text-decoration: underline;
+    font-size:0.8rem;
+    line-height:1rem;
+}
+
+
+
+.form-wrap {
+    width: 100%;
+    padding-left: 1.2rem;
+}
+.form-line {
+    padding: 0.3rem 0.3rem 0.3rem 0;
+    position: relative;
+    border-bottom: 1px solid #DBDBEA;
+    line-height: 1.8rem;
+}
+
+.form-line .form-left, .form-line .form-left-label {
+    float: left;
+    width: 70%;
+}
+.form-line i[class*="icon"] {
+    font-size: 1.6rem;
+}
+
+.form-line i {
+    color: #CACAD9;
+}
+
+*[class*="icon"] {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.form-line .form-left .form-input, .form-line .form-left-label .form-input {
+    padding-left: 1rem;
+    width: 70%;
+}
+
+.form-line .form-right {
+    float: right;
+    width: 30%;
+    position: relative;
+    text-align: right;
+}
+
+.form-line input {
+    border: none;
+    height: 1.8rem;
+    line-height: 0.9rem;
+    font-size: 0.9rem;
+}
+
+.clearfix {
+    *zoom: 1;
+}
