@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ea294e47-1d90-48a2-8d72-4d88887a4400" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/javascripts/base.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login/loginRegister.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login/loginRegister.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/index/indexguide.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/index/indexguide.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +12,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/base.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="269">
@@ -67,6 +62,15 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/css/index/indexguide.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="567">
+              <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -108,7 +112,6 @@
         <option value="$PROJECT_DIR$/index/admin.py" />
         <option value="$PROJECT_DIR$/index/models.py" />
         <option value="$PROJECT_DIR$/templates/index/guidedetails.html" />
-        <option value="$PROJECT_DIR$/static/css/index/indexguide.css" />
         <option value="$PROJECT_DIR$/templates/index/guide.html" />
         <option value="$PROJECT_DIR$/templates/index/newguide.html" />
         <option value="$PROJECT_DIR$/static/javascripts/login/loginRegister.js" />
@@ -123,12 +126,13 @@
         <option value="$PROJECT_DIR$/static/javascripts/base.js" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/static/css/base.css" />
+        <option value="$PROJECT_DIR$/static/css/index/indexguide.css" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="67" />
-    <option name="y" value="25" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="298" />
+    <option name="y" value="39" />
     <option name="width" value="1188" />
     <option name="height" value="1000" />
   </component>
@@ -157,6 +161,19 @@
               <item name="pycharmProgram" type="b2602c69:ProjectViewProjectNode" />
               <item name="pycharmProgram" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pycharmProgram" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pycharmProgram" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pycharmProgram" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pycharmProgram" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pycharmProgram" type="b2602c69:ProjectViewProjectNode" />
@@ -294,7 +311,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564483343553</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="version1.3.1,更新了提示的弹窗">
+      <created>1564522554750</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1564522554750</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView">
@@ -307,10 +331,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <frame x="298" y="39" width="1188" height="1000" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16393442" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25751072" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -344,7 +368,8 @@
     <MESSAGE value="version1.1.0" />
     <MESSAGE value="version1.2.0:将新手指南改成了“大发指南”" />
     <MESSAGE value="version1.3.0,更新了登录注册页面，实现了注册以后，直接登录功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="version1.3.0,更新了登录注册页面，实现了注册以后，直接登录功能" />
+    <MESSAGE value="version1.3.1,更新了提示的弹窗" />
+    <option name="LAST_COMMIT_MESSAGE" value="version1.3.1,更新了提示的弹窗" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/static/css/login/style.login.css">
@@ -411,13 +436,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index/apps.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/index/indexguide.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/index/maintz.css">
       <provider selected="true" editor-type-id="text-editor" />
@@ -618,6 +636,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
           <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/index/indexguide.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
         </state>
       </provider>
     </entry>
