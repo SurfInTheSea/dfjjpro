@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ea294e47-1d90-48a2-8d72-4d88887a4400" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/static/css/index/indexguide.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/index/indexguide.css" afterDir="false" />
+    <list default="true" id="ea294e47-1d90-48a2-8d72-4d88887a4400" name="Default Changelist" comment="version1.3.2,更新了图片">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/login/loginRegister.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/login/loginRegister.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login/loginRegister.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login/loginRegister.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +18,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/base.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
+            <state relative-caret-position="756">
               <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
             </state>
           </provider>
@@ -24,22 +27,40 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
+            <state relative-caret-position="1554">
               <caret line="74" column="4" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/login/loginRegister.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="184" column="45" selection-start-line="184" selection-start-column="35" selection-end-line="184" selection-end-column="45" />
+            <state relative-caret-position="319">
+              <caret line="289" lean-forward="true" selection-start-line="289" selection-end-line="289" />
               <folding>
                 <element signature="n#style#0;n#hr#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#div#1;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DFJJproDjango/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="458">
+              <caret line="111" column="15" lean-forward="true" selection-start-line="111" selection-start-column="15" selection-end-line="111" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/css/login/loginRegister.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1995">
+              <caret line="95" column="21" selection-start-line="95" selection-start-column="21" selection-end-line="95" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -62,11 +83,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/index/indexguide.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+            <state relative-caret-position="357">
+              <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="546">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -115,24 +148,24 @@
         <option value="$PROJECT_DIR$/templates/index/guide.html" />
         <option value="$PROJECT_DIR$/templates/index/newguide.html" />
         <option value="$PROJECT_DIR$/static/javascripts/login/loginRegister.js" />
-        <option value="$PROJECT_DIR$/static/css/login/loginRegister.css" />
         <option value="$PROJECT_DIR$/templates/login/login.html" />
         <option value="$PROJECT_DIR$/index/urls.py" />
         <option value="$PROJECT_DIR$/index/forms.py" />
         <option value="$PROJECT_DIR$/DFJJproDjango/settings.py" />
         <option value="$PROJECT_DIR$/index/views.py" />
-        <option value="$PROJECT_DIR$/templates/login/loginRegister.html" />
         <option value="$PROJECT_DIR$/templates/index/index.html" />
         <option value="$PROJECT_DIR$/static/javascripts/base.js" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/static/css/base.css" />
         <option value="$PROJECT_DIR$/static/css/index/indexguide.css" />
+        <option value="$PROJECT_DIR$/templates/login/loginRegister.html" />
+        <option value="$PROJECT_DIR$/static/css/login/loginRegister.css" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="298" />
-    <option name="y" value="39" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="554" />
+    <option name="y" value="36" />
     <option name="width" value="1188" />
     <option name="height" value="1000" />
   </component>
@@ -155,38 +188,12 @@
             <path>
               <item name="pycharmProgram" type="b2602c69:ProjectViewProjectNode" />
               <item name="pycharmProgram" type="462c0819:PsiDirectoryNode" />
+              <item name="DFJJproDjango" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pycharmProgram" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pycharmProgram" type="462c0819:PsiDirectoryNode" />
               <item name="index" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pycharmProgram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pycharmProgram" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pycharmProgram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pycharmProgram" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pycharmProgram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pycharmProgram" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-              <item name="index" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pycharmProgram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pycharmProgram" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="javascripts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pycharmProgram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pycharmProgram" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="javascripts" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pycharmProgram" type="b2602c69:ProjectViewProjectNode" />
@@ -318,7 +325,35 @@
       <option name="project" value="LOCAL" />
       <updated>1564522554750</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="version1.3.1,更新了几个样式">
+      <created>1564544586665</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1564544586665</updated>
+    </task>
+    <task id="LOCAL-00014" summary="version1.3.2,更新了几个样式">
+      <created>1564544607223</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1564544607223</updated>
+    </task>
+    <task id="LOCAL-00015" summary="version1.4.2,更新图片和数据">
+      <created>1564545767004</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1564545767004</updated>
+    </task>
+    <task id="LOCAL-00016" summary="version1.3.2,更新了图片">
+      <created>1564546077836</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1564546077836</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TodoView">
@@ -331,10 +366,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="298" y="39" width="1188" height="1000" extended-state="0" />
+    <frame x="67" y="25" width="1853" height="1055" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25751072" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28579235" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -345,7 +380,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32937366" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32937366" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.44816414" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.44816414" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32937366" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -369,7 +404,11 @@
     <MESSAGE value="version1.2.0:将新手指南改成了“大发指南”" />
     <MESSAGE value="version1.3.0,更新了登录注册页面，实现了注册以后，直接登录功能" />
     <MESSAGE value="version1.3.1,更新了提示的弹窗" />
-    <option name="LAST_COMMIT_MESSAGE" value="version1.3.1,更新了提示的弹窗" />
+    <MESSAGE value="version1.3.1,更新了几个样式" />
+    <MESSAGE value="version1.3.2,更新了几个样式" />
+    <MESSAGE value="version1.4.2,更新图片和数据" />
+    <MESSAGE value="version1.3.2,更新了图片" />
+    <option name="LAST_COMMIT_MESSAGE" value="version1.3.2,更新了图片" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/static/css/login/style.login.css">
@@ -478,13 +517,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/login/loginRegister.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="71" column="21" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="343">
@@ -519,16 +551,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="17" column="23" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
@@ -543,13 +565,6 @@
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DFJJproDjango/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1047">
-          <caret line="73" column="68" selection-start-line="73" selection-start-column="68" selection-end-line="73" selection-end-column="68" />
         </state>
       </provider>
     </entry>
@@ -599,10 +614,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/javascripts/login/loginRegister.js">
+    <entry file="file://$PROJECT_DIR$/static/images/index/newguideImages/pic1.72656da.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/images/index/newguideImages/header-banner.5ac0508.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/base.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" selection-start-line="7" selection-end-line="12" selection-end-column="7" />
+        <state relative-caret-position="756">
+          <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1554">
+          <caret line="74" column="4" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/login/loginRegister.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1995">
+          <caret line="95" column="21" selection-start-line="95" selection-start-column="21" selection-end-line="95" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -613,36 +648,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/login/loginRegister.html">
+    <entry file="file://$PROJECT_DIR$/static/javascripts/login/loginRegister.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="184" column="45" selection-start-line="184" selection-start-column="35" selection-end-line="184" selection-end-column="45" />
-          <folding>
-            <element signature="n#style#0;n#hr#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="74" column="4" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/base.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+        <state relative-caret-position="147">
+          <caret line="7" selection-start-line="7" selection-end-line="12" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/index/indexguide.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+        <state relative-caret-position="357">
+          <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DFJJproDjango/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="111" column="15" lean-forward="true" selection-start-line="111" selection-start-column="15" selection-end-line="111" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/login/loginRegister.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="289" lean-forward="true" selection-start-line="289" selection-end-line="289" />
+          <folding>
+            <element signature="n#style#0;n#hr#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#1;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
